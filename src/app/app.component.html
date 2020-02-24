@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-split-pane >
+    <ion-menu  side="start" type="overlay" >
+      <ion-header >
+        <ion-toolbar color="primary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+          <ion-list>
+            <ion-menu-toggle>
+              <ion-item [routerLink]="['/home']">
+                <ion-icon name="home"></ion-icon>
+                <ion-label>  Home</ion-label>
+              </ion-item>
+            <ion-item [routerLink]="['/journalEntryList']">
+              <ion-icon name="book"></ion-icon>
+              <ion-label>Forum</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/facts']" >
+              <ion-icon name="logo-no-smoking"></ion-icon>
+              <ion-label>Smoking Facts</ion-label>
+            </ion-item> 
+            <ion-item [routerLink]="['/profile']" >
+              <ion-icon name="person"></ion-icon>
+               <ion-label>Profile</ion-label>
+            </ion-item> 
+          </ion-menu-toggle>
+          </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

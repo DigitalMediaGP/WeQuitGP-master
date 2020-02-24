@@ -1,0 +1,7 @@
+{
+  "name": "WeQuitGP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

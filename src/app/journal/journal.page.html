@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Forum</ion-title>
+    <ion-buttons slot="start">
+       <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/journal">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <ion-list>
+        <ion-item button *ngFor="let journal of (journals | async)" [routerLink]="['/journal', journal.id]">
+          {{ journal.name }}
+        </ion-item>
+      </ion-list>
+</ion-content>

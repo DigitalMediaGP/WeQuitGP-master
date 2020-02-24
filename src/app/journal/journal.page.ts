@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Journal, JournalService } from 'src/app/services/journal.service';
+import { Journal, JournalService } from '../services/journal.service';
 
 import { Observable } from 'rxjs';
 

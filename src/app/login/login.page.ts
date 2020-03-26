@@ -1,3 +1,4 @@
+  
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import { auth } from 'firebase/app'
@@ -17,7 +18,6 @@ export class LoginPage implements OnInit {
 	constructor(public afAuth: AngularFireAuth, public user: JournalService, public router: Router) { }
 
 	ngOnInit() {
-		
 	}
 
 	async login() {

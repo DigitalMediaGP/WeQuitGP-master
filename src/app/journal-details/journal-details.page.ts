@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { JournalService, Journal } from '../services/journal.service';
+import { JournalService, Journal } from '../Services/journal.service';
 import { ToastController } from '@ionic/angular';
 // import { Journal } from '../model.Journal';
 import { Observable } from 'rxjs';

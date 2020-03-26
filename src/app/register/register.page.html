@@ -4,86 +4,29 @@
 			<ion-back-button></ion-back-button>
 		  </ion-buttons>
 	  <ion-title>Register</ion-title>
-
-
+	</ion-toolbar>
+  </ion-header>
   
-
-		 <ion-buttons slot="start">
-        <ion-button (click)="prev()"><ion-icon slot="start" name="arrow-back"></ion-icon> Prev</ion-button>
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-button (click)="next()">Next <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-    <ion-slides #signupSlider>
-
-      <ion-slide>
-		  <p>Enter your details below</p>
-<p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
-
-<ion-list lines="none">
-
-    <form [formGroup]="slideOneForm">
-
-       <ion-item>
+  <ion-content padding>
+	  <ion-list>
+  
+		  <ion-item>
 			<ion-label position="floating">Username</ion-label>
-			<ion-input type="username" placeholder="Username" formControlName="username"></ion-input>
+			<ion-input type="text" [(ngModel)]="username"></ion-input>
 		  </ion-item>
 		
 		  <ion-item>
 			<ion-label position="floating">Password</ion-label>
-			<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			<ion-input type="password" [(ngModel)]="password"></ion-input>
 		  </ion-item>
 
 		  <ion-item>
 			<ion-label position="floating">Confirm Password</ion-label>
-			<ion-input type="cpassword" placeholder="Confirm Password" formControlName="cpassword"></ion-input>
+			<ion-input type="password" [(ngModel)]="cpassword"></ion-input>
 		  </ion-item>
 		
-
-    </form>
-
-</ion-list>
-      </ion-slide>
-
-      <ion-slide>
-		<ion-img  width="50%" height="50%"  src="assets/img/wequit2.png"></ion-img>
-
-		  <p>About your habit</p>
-
- <ion-list lines="none">
-
-            <form [formGroup]="slideTwoForm">
-
-                <ion-item>
-			<ion-label position="floating">How much do you smoke a day?</ion-label>
-			<ion-input type="text" placeholder="Per day" formControlName="howMuch"></ion-input>
-		  </ion-item>
-
-			 <ion-item>
-			<ion-label position="floating">Price per packet</ion-label>
-			<ion-input type="text" placeholder="Price" formControlName="pricePer"></ion-input>
-		  </ion-item>
-
-			 <ion-item>
-			<ion-label position="floating">Number in packet</ion-label>
-			<ion-input type="text" placeholder="Number of" formControlName="noPack"></ion-input>
-		  </ion-item>
-		  <ion-item>
-			<ion-label position="floating">How soon after you wake up do you smoke?</ion-label>
-			<ion-input type="text" placeholder="How soon" formControlName="howSoon"></ion-input>
-		  </ion-item>
-
-            </form>
-
-        </ion-list>
-
-        <ion-button expand="full" color="primary" (click)="register()">Create Account!</ion-button>
-      </ion-slide>
-
-    </ion-slides>
+		</ion-list>
+		<br>
+  
+		<ion-button fill="solid" expand="block" color="dark" (click)="register()" >Signup</ion-button>
   </ion-content>

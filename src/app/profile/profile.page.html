@@ -9,24 +9,14 @@
 
 <ion-content>
 
+
   
-    <br>
-    
-    <ion-avatar class="avi">
-      <img src="assets/img/defaultimg.png" >
-    </ion-avatar>
- 
+  <p> hello </p>
 
-  <div class="ion-text-center">
-      <h1 *ngIf="afAuth.auth.currentUser">
-          {{afAuth.auth.currentUser.username}}
-      </h1>
-
-      <h3>
-        Email: 
-      </h3>
-      
-    
-  </div>
+  <ion-footer>
+    <ion-button color="danger" expand="full" *ngIf="afAuth.auth.currentUser" (click)="signOut()"  >
+      Sign Out
+    </ion-button>
+  </ion-footer>
 
 </ion-content>

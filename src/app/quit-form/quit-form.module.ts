@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule} from '@angular/forms'; //quit form test
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
-import { FirebaseUIModule } from 'firebaseui-angular';
+import { QuitFormPage } from './quit-form.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: QuitFormPage
   }
 ];
 
@@ -20,12 +18,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    FirebaseUIModule,
-
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [QuitFormPage]
 })
-export class HomePageModule {}
+export class QuitFormPageModule {}

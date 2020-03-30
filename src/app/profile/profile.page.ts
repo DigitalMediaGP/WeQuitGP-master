@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +10,25 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ProfilePage implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth) { }
+
+
+   QuitForm = this.formBuilder.group({
+    Brand:[''],
+    CigarettesADay:[''],
+    CigarettesPerBox:[''],
+    CostOfBox:[''],
+    YearsSmoking:[''],
+
+ 
+   });
+
+  constructor(private formBuilder: FormBuilder ,public afAuth: AngularFireAuth) { }
+
+
 
   ngOnInit() {
   }
-
+  public submit(){
+    console.log(this.QuitForm.value);
+  }
 }

@@ -7,22 +7,20 @@
   </ion-toolbar>
 </ion-header>
 
-
-
-
 <ion-content>
 
  
 
   <!-- <firebase-ui></firebase-ui> -->
 
-  <ion-img src="assets/img/animatedlogo.gif" width="20" height="20"  *ngIf="afAuth.auth.currentUser"></ion-img>
+  <ion-img src="assets/img/animatedlogo.gif" width="10" height="10"  *ngIf="afAuth.auth.currentUser"></ion-img>
 
 
   <div class="ion-text-center">
     <h1 *ngIf="afAuth.auth.currentUser">
       Welcome to WeQuit!
     </h1>
+
   
    
     <p *ngIf="afAuth.auth.currentUser">
@@ -35,6 +33,16 @@
   </p>
   
   </div>
+
+  <ion-card>
+
+  
+    <ion-card-content>
+      Tobacco smoking during pregnancy increases the risk of the mother having complications
+       during pregnancy and the baby being born with low birthweight. Carbon Monoxide and 
+       other contents of cigarettes have harmful effects on the baby’s growth and development.   
+    </ion-card-content>
+  </ion-card>
 
   
 

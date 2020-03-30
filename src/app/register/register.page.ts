@@ -43,15 +43,13 @@ export class RegisterPage implements OnInit {
 		if(password !== cpassword) {
 			return alert("Passwords do mot match")
 		}
-
 		try {
 			const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '@wequit.com', password)
-
 			this.presentAlert('Success', 'You are registered!')
 			this.router.navigate(['/home'])
-
 		} catch(error) {
 			console.dir(error)
+			alert(error);
 		}
 	}
 

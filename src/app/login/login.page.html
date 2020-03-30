@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
 	<ion-buttons slot="start">
 		<ion-back-button></ion-back-button>
 	  </ion-buttons>
@@ -7,21 +7,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-	<ion-list>
+<ion-img class="logogyp"src="assets/img/animatedlogo.gif"></ion-img>
 
-		<ion-item > 
-		  <ion-label position="floating">Username</ion-label>
-		  <ion-input type="text" [(ngModel)]="username"></ion-input>
-		</ion-item>
-	  
-		<ion-item>
-		  <ion-label position="floating">Password</ion-label>
-		  <ion-input type="password" [(ngModel)]="password"></ion-input>
-		</ion-item>
-	  
-	  </ion-list>
-	  <br>
 
-	  <ion-button fill="solid" expand="block" color="dark" (click)="login()" >Login</ion-button>
+
+
+
+<ion-content>
+	<ion-card>
+	  <ion-card-content>
+		  
+		  <ion-card-title class="cardtitle">Please enter login details</ion-card-title>
+
+  
+		  <ion-list>
+
+			<ion-item > 
+				<ion-label position="floating">Username</ion-label>
+				<ion-input type="text" [(ngModel)]="username"></ion-input>
+			  </ion-item>
+			
+			  <ion-item>
+				<ion-label position="floating">Password</ion-label>
+				<ion-input type="password" [(ngModel)]="password"></ion-input>
+			  </ion-item>
+			
+			</ion-list>
+	
+			<br>
+			<ion-button fill="solid" expand="block" color="primary" (click)="login()()" >Login</ion-button>
+		
+	   
+	  </ion-card-content>
+	</ion-card>
 </ion-content>

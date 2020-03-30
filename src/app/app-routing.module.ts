@@ -7,14 +7,12 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'home',loadChildren: './home/home.module#HomePageModule'},
-
-
-
   { path: 'journal', loadChildren: './journal-details/journal-details.module#JournalDetailsPageModule' },
-  { path: 'journal/:id', loadChildren: './journal-details/journal-details.module#JournalDetailsPageModule' },
+  { path: 'journal/:id/:name/:notes/:user', loadChildren: './journal-details/journal-details.module#JournalDetailsPageModule' },
   { path: 'journalEntryList', loadChildren: './journal/journal.module#JournalPageModule' },
   { path: 'facts', loadChildren: './facts/facts.module#FactsPageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+  { path: 'quit-form', loadChildren: './quit-form/quit-form.module#QuitFormPageModule' }
 
 ];
 @NgModule({

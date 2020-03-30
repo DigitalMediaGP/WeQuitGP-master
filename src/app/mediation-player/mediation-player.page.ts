@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Howl } from 'howler';
+
+export interface Track{
+  name: string;
+  path: string;
+}
 
 @Component({
   selector: 'app-mediation-player',
@@ -7,7 +13,77 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediationPlayerPage implements OnInit {
 
+  playlist: Track[] = [
+    {
+      name: 'Track 1',
+      path: './assets/Meditationplayer/Track1.mp3'  ///Users/jamesomalley/Desktop/FYP/WeQuitGP-master/src/assets/Meditationplayer/Track1.mp3
+    },
+    {
+      name: 'Track 2',
+      path: './assets/Meditationplayer/Track1.mp3'
+    },
+    {
+      name: 'Track 3',
+      path: './assets/Meditationplayer/Track1.mp3'
+    }
+  ];
+
+  activeTrack: Track = null;
+  player: Howl = null ;
+  isPlaying = false;
   constructor() { }
+
+  start(track: Track){
+    if(this.player){
+      this.player.stop();
+    }
+    this.player = new Howl({
+      src: [track.path],
+      onplay: () => {
+        console.log('onplay');
+        this.isPlaying = true;
+        this.activeTrack = track;
+      },
+      onend:() => {
+        console.log('onend');
+
+      }
+    });
+    this.player.play();
+  }
+
+  togglePlayer(pause){ //pause button 
+    this.isPlaying = !pause;
+    if(pause){
+      this.player.pause();
+    } else {
+      this.player.play();
+    }
+  }
+
+  next(){
+    let index = this.playlist.indexOf(this.activeTrack);
+    if (index != this.playlist.length -1) {
+      this.start(this.playlist[index + 1]);
+    } else {
+      this.start(this.playlist[0]);
+    }
+  }
+  
+  prev(){
+   let index = this.playlist.indexOf(this.activeTrack);
+   if (index > 0){
+     this.start(this.playlist[index -1]);
+   } else {
+     this.start(this.playlist[this.playlist.length -1]);
+   }
+  }
+
+  updateProgress(){
+
+  }
+
+
 
   ngOnInit() {
   }

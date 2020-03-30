@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'facts', loadChildren: './facts/facts.module#FactsPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'quit-form', loadChildren: './quit-form/quit-form.module#QuitFormPageModule' },
-  { path: 'chatforum', loadChildren: './chatforum/chatforum.module#ChatforumPageModule' }
+  { path: 'chatforum', loadChildren: './chatforum/chatforum.module#ChatforumPageModule' },
+  { path: 'mediation-player', loadChildren: './mediation-player/mediation-player.module#MediationPlayerPageModule' }
 
 ];
 @NgModule({

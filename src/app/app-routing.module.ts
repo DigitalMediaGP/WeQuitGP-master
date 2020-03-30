@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'journalEntryList', loadChildren: './journal/journal.module#JournalPageModule' },
   { path: 'facts', loadChildren: './facts/facts.module#FactsPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-  { path: 'quit-form', loadChildren: './quit-form/quit-form.module#QuitFormPageModule' }
+  { path: 'quit-form', loadChildren: './quit-form/quit-form.module#QuitFormPageModule' },
+  { path: 'chatforum', loadChildren: './chatforum/chatforum.module#ChatforumPageModule' }
 
 ];
 @NgModule({

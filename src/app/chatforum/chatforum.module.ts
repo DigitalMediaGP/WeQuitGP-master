@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule} from '@angular/forms'; //quit form test
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
-import { FirebaseUIModule } from 'firebaseui-angular';
-import { AutosizeModule } from 'ngx-autosize';
+import { ChatforumPage } from './chatforum.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: ChatforumPage
   }
 ];
 
@@ -21,13 +18,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    FirebaseUIModule,
-    AutosizeModule,
-
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [ChatforumPage]
 })
-export class HomePageModule {}
+export class ChatforumPageModule {}

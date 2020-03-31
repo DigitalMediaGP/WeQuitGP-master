@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Howl } from 'howler';
+import { IonRange } from '@ionic/angular';
 
 export interface Track{
   name: string;
@@ -31,6 +32,10 @@ export class MediationPlayerPage implements OnInit {
   activeTrack: Track = null;
   player: Howl = null ;
   isPlaying = false;
+  progress = 0;
+  @ViewChild ('range', {static:false}) range: IonRange;
+  // @ViewChild('range') range: IonRange; 
+
   constructor() { }
 
   start(track: Track){
@@ -39,10 +44,12 @@ export class MediationPlayerPage implements OnInit {
     }
     this.player = new Howl({
       src: [track.path],
-      onplay: () => {
+      // html5: true,
+      onplay: () => {  
         console.log('onplay');
         this.isPlaying = true;
         this.activeTrack = track;
+        this.updateProgress ();
       },
       onend:() => {
         console.log('onend');
@@ -69,7 +76,7 @@ export class MediationPlayerPage implements OnInit {
       this.start(this.playlist[0]);
     }
   }
-  
+
   prev(){
    let index = this.playlist.indexOf(this.activeTrack);
    if (index > 0){
@@ -80,10 +87,18 @@ export class MediationPlayerPage implements OnInit {
   }
 
   updateProgress(){
-
+    let seek = this.player.seek();
+    this.progress = (seek / this.player.duration()) * 100 || 0;
+    setTimeout(() => {
+        this.updateProgress();
+    }, 100)
   }
 
-
+seek(){
+  let newValue = +this.range.value;
+  let duration = this.player.duration();
+  this.player.seek(duration * (newValue / 100));
+}
 
   ngOnInit() {
   }

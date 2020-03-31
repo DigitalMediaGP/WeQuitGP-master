@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title >Meditation</ion-title>
+    <ion-title>Meditation</ion-title>
     <ion-buttons slot="start">
-       <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
   <ion-list>
     <ion-item button *ngFor="let track of playlist" (click)="start(track)">
       <ion-label [color]="track == activeTrack ? 'success' : 'light'">
-          {{ track.name }}
+        {{ track.name }}
 
       </ion-label>
     </ion-item>
@@ -27,11 +27,10 @@
         {{ activeTrack.name }}
       </ion-col>
 
-      <ion-col size="12"> 
-        <ion-range #range[(ngModel)] = "progress" >
+     <ion-col size="12">
+       <ion-range #range [(ngModel)]="progress" max="100" color="success" (mouseup)="seek()"></ion-range>
+     </ion-col>
 
-        </ion-range>
-      </ion-col>
       <ion-col size="12" class="ion-text-center">
 
         <ion-button fill="clear" (click)="prev()" color="light">
@@ -55,4 +54,3 @@
     </ion-row>
   </ion-toolbar>
 </ion-footer>
- 

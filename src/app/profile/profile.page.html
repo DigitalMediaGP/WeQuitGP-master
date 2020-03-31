@@ -3,20 +3,55 @@
     <ion-title>profile</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-   </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <!-- <ion-img class="profileicon"src="assets/svgs/profileicon.png" ></ion-img>  -->
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="profileicon" src="assets/svgs/profileicon.png"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <h1 class="user" *ngIf="user" > {{user.email}} </h1>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Brand</ion-label>
+          <br>
+
+          {{brand}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Price of box</ion-label>
+          <br>
+          {{CostOfBox}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Amount per box</ion-label>
+          <br>
+          {{CigarettesPerBox}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">CigarettesADay</ion-label>
+          <br>
+          {{CigarettesADay}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Years smoking</ion-label>
+          <br>
+          {{YearsSmoking}}
+          <br>
+          {{costPerYear}}
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating"> Cost Per Cigarette</ion-label>
+          <br>
+          <b>{{CostPerCigarette}}</b>
 
 
-  
-  <p> hello </p>
-
-  <ion-footer>
-    <ion-button color="danger" expand="full" *ngIf="afAuth.auth.currentUser" (click)="signOut()"  >
-      Sign Out
-    </ion-button>
-  </ion-footer>
-
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

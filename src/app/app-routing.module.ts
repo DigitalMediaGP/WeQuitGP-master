@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'quit-form', loadChildren: './quit-form/quit-form.module#QuitFormPageModule' },
   { path: 'chatforum', loadChildren: './chatforum/chatforum.module#ChatforumPageModule' },
-  { path: 'mediation-player', loadChildren: './mediation-player/mediation-player.module#MediationPlayerPageModule' }
+  { path: 'mediation-player', loadChildren: './mediation-player/mediation-player.module#MediationPlayerPageModule' },
+  { path: 'financial-page', loadChildren: './financial-page/financial-page.module#FinancialPagePageModule' }
 
 ];
 @NgModule({

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Financial</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <ion-img src="assets/img/quit.png" width="20" height="20"></ion-img>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="test"> WORKING ON DATE PICKER</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>Quit Date</ion-label>
+            <ion-datetime ></ion-datetime>
+          </ion-item>
+
+          <br>
+          <br>       <br>       <br>       <br>       <br>       <br>       <br>       <br>
+
+          <ion-item>
+            <ion-label position="floating">Price of box</ion-label>
+            <ion-input [(ngModel)]="CostOfBox" type="text" placeholder="€ Price "> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Amount per box</ion-label>
+            <ion-input [(ngModel)]="CigarettesPerBox" type="text" placeholder="Box of "> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Cigarettes per day</ion-label>
+            <ion-input [(ngModel)]="CigarettesADay" type="text" placeholder="Per day"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">How long have you been smoking for?</ion-label>
+            <ion-input [(ngModel)]="YearsSmoking" type="text" placeholder=" Length"> </ion-input>
+          </ion-item>
+        </ion-list>
+        <div class="ion-padding">
+          <ion-button expand="block" (click)="addUser()" class="ion-no-margin">Finish</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

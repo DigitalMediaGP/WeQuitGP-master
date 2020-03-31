@@ -19,6 +19,9 @@ export class QuitFormPage implements OnInit {
   //load in the details for the user.. get a hold of this data
   private userDetails:Observable<userinfo[]>;
   private addThisUser:userinfo
+
+  myDate = new Date().toISOString(); // date picker format
+
   user: firebase.User;
   //variable to be added as user information to be database
   brand:string
@@ -26,12 +29,26 @@ export class QuitFormPage implements OnInit {
   CigarettesPerBox:number
   CostOfBox:number
   YearsSmoking:number
+  QuitDate:number
   //for deciding if user should update or add
   updateUser:number
+
   ngOnInit() { 
     this.userDetails = this.service.getUsers()
     console.log(this.userDetails)
   }
+
+  dateChanged(date){  // date picker
+    console.log(date.detail.value);
+    console.log(this.myDate);
+  }
+
+  
+
+
+
+  //dateChanged2
+
   ionViewWillEnter(){
     this.updateUser = 0
     this.userDetails.forEach(element => {
@@ -48,6 +65,7 @@ export class QuitFormPage implements OnInit {
           this.CigarettesPerBox = element[index].CigarettesPerBox
           this.CostOfBox = element[index].CostOfBox
           this.YearsSmoking = element[index].YearsSmoking
+          this.QuitDate = element[index].QuitDate
           //if found then add user becomes update
           console.log('User found!')
           this.updateUser = 1
@@ -64,9 +82,10 @@ export class QuitFormPage implements OnInit {
       this.addThisUser.CigarettesPerBox = this.CigarettesPerBox
       this.addThisUser.CostOfBox = this.CostOfBox
       this.addThisUser.YearsSmoking = this.YearsSmoking
+      this.addThisUser.QuitDate = this.QuitDate
       console.log(this.addThisUser)
       this.service.updateuser(this.addThisUser).then(() => {
-        this.router.navigateByUrl('/home');
+      //  this.router.navigateByUrl('/home');
         alert('Statistics updated');
       })
       //reset check for updating a user
@@ -83,10 +102,13 @@ export class QuitFormPage implements OnInit {
         CigarettesPerBox: this.CigarettesADay,
         CostOfBox: this.CostOfBox,
         YearsSmoking: this.YearsSmoking,
-        UserName:this.user.email
+        UserName:this.user.email,
+        QuitDate:this.QuitDate
+
+      
       }
       this.service.adduser(this.addThisUser).then(() => {
-        this.router.navigateByUrl('/home');
+        // this.router.navigateByUrl('/home');
         alert('Statistics updated');
       });
     } 

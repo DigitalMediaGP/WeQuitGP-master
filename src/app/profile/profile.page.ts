@@ -30,6 +30,7 @@ export class ProfilePage implements OnInit {
   CigarettesPerBox: number = 0
   CostOfBox: number = 0
   YearsSmoking: number = 0
+  QuitDate:number =0
   //for deciding if user should update or add
   costPerYear:number
   CostPerCigarette:number
@@ -50,6 +51,7 @@ export class ProfilePage implements OnInit {
           this.CigarettesPerBox = element[index].CigarettesPerBox
           this.CostOfBox = element[index].CostOfBox
           this.YearsSmoking = element[index].YearsSmoking
+          this.QuitDate = element[index].QuitDate
 
           this.costPerYear = this.CostOfBox*52
           
@@ -57,6 +59,8 @@ export class ProfilePage implements OnInit {
           // this.PricePerDay = this.
           console.log(this.costPerYear)
           console.log(this.CostPerCigarette)
+
+         
 
         }
       }

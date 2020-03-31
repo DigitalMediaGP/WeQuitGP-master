@@ -37,11 +37,13 @@
           {{CigarettesADay}}
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Years smoking</ion-label>
-          <br>
-          {{YearsSmoking}}
-          <br>
-          {{costPerYear}}
+          <ion-label>Start Date</ion-label>
+          <ion-datetime [(ngModel)]="YearsSmoking"  disabled value></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Quit Date</ion-label>
+          <ion-datetime [(ngModel)]="QuitDate"  disabled value></ion-datetime>
         </ion-item>
 
         <ion-item>

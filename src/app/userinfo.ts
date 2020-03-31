@@ -7,5 +7,6 @@ CigarettesADay:number,
 CigarettesPerBox:number,
 CostOfBox:number,
 UserName:string,
-YearsSmoking:number
+YearsSmoking:number,
+QuitDate:number
 }

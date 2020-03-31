@@ -31,9 +31,18 @@
           <ion-label position="floating">Cigarettes per day</ion-label>
           <ion-input [(ngModel)]="CigarettesADay" type="text" placeholder="Per day"> </ion-input>
         </ion-item>
-        <ion-item>
+        <!-- <ion-item>
           <ion-label position="floating">How long have you been smoking for?</ion-label>
           <ion-input [(ngModel)]="YearsSmoking" type="text" placeholder=" Length"> </ion-input>
+        </ion-item> -->
+      
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime [(ngModel)]="YearsSmoking"  placeholder="Select Date"(ionChange)="dateChanged($event)"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Quit Date</ion-label>
+          <ion-datetime [(ngModel)]="QuitDate"  placeholder="Select Date"(ionChange)="dateChanged($event)"></ion-datetime>
         </ion-item>
       </ion-list>
       <div class="ion-padding">

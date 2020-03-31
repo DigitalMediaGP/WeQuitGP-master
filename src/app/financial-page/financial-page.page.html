@@ -19,7 +19,7 @@
         <ion-list>
           <ion-item>
             <ion-label>Quit Date</ion-label>
-            <ion-datetime ></ion-datetime>
+            <ion-datetime [(ngModel)]="YearsSmoking" displayFormat="DD, MM, YYYY" placeholder="Select Date"(ionChange)="dateChanged($event)"></ion-datetime>
           </ion-item>
 
           <br>

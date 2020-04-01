@@ -1,50 +1,90 @@
 <ion-header>
   <ion-toolbar color="primary">
-       <ion-title>WeQuit</ion-title>
-       <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
-          <ion-menu-button></ion-menu-button>
-       </ion-buttons>
+    <ion-title>WeQuit</ion-title>
+    <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
+      <!-- <ion-menu-button></ion-menu-button> -->
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
+    </ion-card-header>
 
- 
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          
+          <ion-button expand="block"  class="btn1" [routerLink]="['/journalEntryList']">Diary</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" [routerLink]="['/facts']">Smoking Facts</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <!-- <firebase-ui></firebase-ui> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" [routerLink]="['/quit-form']">Quit Forn</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" [routerLink]="['/chatforum']" >WeQuit Forum</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-img src="assets/img/animatedlogo.gif" width="10" height="10"  *ngIf="afAuth.auth.currentUser"></ion-img>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block"  class="btn1"  [routerLink]="['/financial-page']">Financial</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" [routerLink]="['/profile']" >Profile</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" [routerLink]="['/mediation-player']">Meditation</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block"  class="btn1" color="danger" (click)="signOut()">Logout</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <div class="ion-text-center">
-    <h1 *ngIf="afAuth.auth.currentUser">
-      Welcome to WeQuit!
-    </h1>
-
-  
+    
    
-    <p *ngIf="afAuth.auth.currentUser">
+
+    <!-- <div class="ion-padding">
+      <ion-button expand="block" (click)="addUser()" class="ion-no-margin">Finish</ion-button>
+    </div> -->
+
+
+
+    <!-- <ion-card-content>
+      Tobacco smoking during pregnancy increases the risk of the mother having complications
+      during pregnancy and the baby being born with low birthweight. Carbon Monoxide and
+      other contents of cigarettes have harmful effects on the baby’s growth and development.
+    </ion-card-content> -->
+
+   
+
+
+
+
+
+
+
+
+
+  <!-- <p *ngIf="afAuth.auth.currentUser">
     Thank you for signing up to WeQuit. This app is to aid you in your persute of a healthier lifestyle, 
     by quitting smoking and/or vaping.
-  </p>
-  <p *ngIf="afAuth.auth.currentUser">
-    This app is not limited to but our main focus is helping you quit smoking and vaping, however some of our
-     features could be found useful to cut down on any number of vices you may be trying to kick.
-  </p>
-  
-  </div>
-
-  <ion-card>
-
-  
-    <ion-card-content>
-      Tobacco smoking during pregnancy increases the risk of the mother having complications
-       during pregnancy and the baby being born with low birthweight. Carbon Monoxide and 
-       other contents of cigarettes have harmful effects on the baby’s growth and development.   
-    </ion-card-content>
-  </ion-card>
-
-  
-
-</ion-content>
-
+  </p> -->

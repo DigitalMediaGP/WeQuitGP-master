@@ -1,0 +1,59 @@
+.avi{
+    margin: auto;
+}
+
+.profileicon{
+    width: 150px;
+    height: 150px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 0em;
+}
+
+.user{
+text-align: center;
+font-weight: 400;
+font-weight: bold;
+}
+
+.FormTitle{
+    color:black;
+    font-weight: bold;
+   
+   
+}
+
+.FormResult{
+    color:black;
+  text-align: right;;
+
+}
+
+
+.Startdate{
+    font-weight: bold;
+    color: black;
+}
+
+.QuitDate{
+    font-weight: bold;
+    color: black;
+}
+
+
+
+ion-col > div {
+   
+    padding: 5px;
+    column-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .habit{
+    font-size: large;
+}

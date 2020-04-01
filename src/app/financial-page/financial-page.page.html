@@ -7,46 +7,160 @@
   </ion-toolbar>
 </ion-header>
 
-
-  <ion-content>
-    <ion-img src="assets/img/quit.png" width="20" height="20"></ion-img>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title class="test"> WORKING ON DATE PICKER</ion-card-title>
-
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label>Quit Date</ion-label>
-            <ion-datetime [(ngModel)]="YearsSmoking" displayFormat="DD, MM, YYYY" placeholder="Select Date"(ionChange)="dateChanged($event)"></ion-datetime>
-          </ion-item>
-
-          <br>
-          <br>       <br>       <br>       <br>       <br>       <br>       <br>       <br>
-
-          <ion-item>
-            <ion-label position="floating">Price of box</ion-label>
-            <ion-input [(ngModel)]="CostOfBox" type="text" placeholder="€ Price "> </ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Amount per box</ion-label>
-            <ion-input [(ngModel)]="CigarettesPerBox" type="text" placeholder="Box of "> </ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Cigarettes per day</ion-label>
-            <ion-input [(ngModel)]="CigarettesADay" type="text" placeholder="Per day"> </ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">How long have you been smoking for?</ion-label>
-            <ion-input [(ngModel)]="YearsSmoking" type="text" placeholder=" Length"> </ion-input>
-          </ion-item>
-        </ion-list>
-        <div class="ion-padding">
-          <ion-button expand="block" (click)="addUser()" class="ion-no-margin">Finish</ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card>
+<ion-content>
+  <!-- <ion-img class="profileicon"src="assets/svgs/profileicon.png" ></ion-img>  -->
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="profileicon" src="assets/svgs/profileicon.png"></ion-img>
+    </ion-card-header>
 
 
+    <ion-card-content>
+      <h1 class="user" *ngIf="user"> Heres some financial information about your habit </h1>
+      <!-- <ion-card>
+        <ion-card-content>
+          <p class="habit"> Each cigarette you smoke costs €{{CostPerCigarette}} . Your daily expense for smoking is €{{costPerDay}}. Each week smoking is costing you €{{costPerWeek}}</p>
+        </ion-card-content>
+      </ion-card> -->
+      <ion-item></ion-item>
+      <ion-item>
+        <ion-label class="Startdate">Start Date</ion-label>
+        <ion-datetime [(ngModel)]="YearsSmoking" disabled value></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="QuitDate">Quit Date</ion-label>
+        <ion-datetime [(ngModel)]="QuitDate" disabled value></ion-datetime>
+      </ion-item>
+      
+      <ion-list>
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col offset-10>
+                <div class="FormTitle">Brand: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{brand}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col offset-10>
+                <div class="FormTitle">Price of box: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">€ {{CostOfBox}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Amount per box: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{CigarettesPerBox}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cigarettes per day: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{CigarettesADay}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+  
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cost per cigarette: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{CostPerCigarette}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cost per day: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{costPerDay}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cost per week: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{costPerWeek}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cost per Month: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{costPerMonth}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cost per Year: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{costPerYear}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+
+      </ion-list>
+
+
+
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

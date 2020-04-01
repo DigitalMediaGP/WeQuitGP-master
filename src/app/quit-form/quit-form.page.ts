@@ -35,19 +35,17 @@ export class QuitFormPage implements OnInit {
 
   ngOnInit() { 
     this.userDetails = this.service.getUsers()
-    console.log(this.userDetails)
+    //console.log(this.userDetails)
   }
 
   dateChanged(date){  // date picker
-    console.log(date.detail.value);
-    console.log(this.myDate);
+    //console.log(date.detail.value);
+    //console.log(this.myDate);
   }
-
-  
-
-
-
   //dateChanged2
+
+
+
 
   ionViewWillEnter(){
     this.updateUser = 0
@@ -58,7 +56,7 @@ export class QuitFormPage implements OnInit {
         if(element[index].UserName==this.user.email)
         {
           this.addThisUser = element[index]
-          console.log(this.addThisUser)
+          //console.log(this.addThisUser)
           //this.addThisUser.id = element[index].id
           this.brand = element[index].Brand
           this.CigarettesADay = element[index].CigarettesADay
@@ -67,9 +65,13 @@ export class QuitFormPage implements OnInit {
           this.YearsSmoking = element[index].YearsSmoking
           this.QuitDate = element[index].QuitDate
           //if found then add user becomes update
-          console.log('User found!')
+          //console.log('User found!')
           this.updateUser = 1
-        }         
+        }
+        else
+        {
+          this.updateUser = 0
+        }
       }
     })
   }
@@ -83,33 +85,32 @@ export class QuitFormPage implements OnInit {
       this.addThisUser.CostOfBox = this.CostOfBox
       this.addThisUser.YearsSmoking = this.YearsSmoking
       this.addThisUser.QuitDate = this.QuitDate
-      console.log(this.addThisUser)
       this.service.updateuser(this.addThisUser).then(() => {
-      //  this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home');
         alert('Statistics updated');
+        console.log(this.addThisUser)
+        //this.updateUser=0
       })
-      //reset check for updating a user
-      this.updateUser=0
+      //reset check for updating a user 
     }
-    else
+    else//no user found
     {
       //add user - first time adding user
-      //build user object for database
+      //build user object for database    
       this.addThisUser =
       {
         Brand:this.brand,
         CigarettesADay: this.CigarettesADay,
-        CigarettesPerBox: this.CigarettesADay,
+        CigarettesPerBox: this.CigarettesPerBox,
         CostOfBox: this.CostOfBox,
         YearsSmoking: this.YearsSmoking,
         UserName:this.user.email,
-        QuitDate:this.QuitDate
-
-      
+        QuitDate:this.QuitDate,  
       }
       this.service.adduser(this.addThisUser).then(() => {
         // this.router.navigateByUrl('/home');
-        alert('Statistics updated');
+        console.log(this.addThisUser)
+        alert('Statistics saved');
       });
     } 
    //to be finished - form validation

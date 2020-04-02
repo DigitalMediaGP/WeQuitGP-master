@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Howl } from 'howler';
 import { IonRange } from '@ionic/angular';
 
-export interface Track{
+export interface Track {
   name: string;
   path: string;
 }
@@ -17,7 +17,8 @@ export class MediationPlayerPage implements OnInit {
   playlist: Track[] = [
     {
       name: 'Track 1',
-      path: './assets/Meditationplayer/Track1.mp3'  ///Users/jamesomalley/Desktop/FYP/WeQuitGP-master/src/assets/Meditationplayer/Track1.mp3
+      // tslint:disable-next-line: max-line-length
+      path: './assets/Meditationplayer/Track1.mp3'  /// Users/jamesomalley/Desktop/FYP/WeQuitGP-master/src/assets/Meditationplayer/Track1.mp3
     },
     {
       name: 'Track 2',
@@ -33,25 +34,25 @@ export class MediationPlayerPage implements OnInit {
   player: Howl = null ;
   isPlaying = false;
   progress = 0;
-  @ViewChild ('range', {static:false}) range: IonRange;
-  // @ViewChild('range') range: IonRange; 
+  @ViewChild ('range', {static: false}) range: IonRange;
+  // @ViewChild('range') range: IonRange;
 
   constructor() { }
 
-  start(track: Track){
-    if(this.player){
+  start(track: Track) {
+    if (this.player) {
       this.player.stop();
     }
     this.player = new Howl({
       src: [track.path],
       // html5: true,
-      onplay: () => {  
+      onplay: () => {
         console.log('onplay');
         this.isPlaying = true;
         this.activeTrack = track;
         this.updateProgress ();
       },
-      onend:() => {
+      onend: () => {
         console.log('onend');
 
       }
@@ -59,44 +60,45 @@ export class MediationPlayerPage implements OnInit {
     this.player.play();
   }
 
-  togglePlayer(pause){ //pause button 
+  togglePlayer(pause) {
     this.isPlaying = !pause;
-    if(pause){
+    if (pause) {
       this.player.pause();
     } else {
       this.player.play();
     }
   }
 
-  next(){
-    let index = this.playlist.indexOf(this.activeTrack);
-    if (index != this.playlist.length -1) {
+  next() {
+    const index = this.playlist.indexOf(this.activeTrack);
+    // tslint:disable-next-line: triple-equals
+    if (index != this.playlist.length - 1) {
       this.start(this.playlist[index + 1]);
     } else {
       this.start(this.playlist[0]);
     }
   }
 
-  prev(){
-   let index = this.playlist.indexOf(this.activeTrack);
-   if (index > 0){
-     this.start(this.playlist[index -1]);
+  prev() {
+   const index = this.playlist.indexOf(this.activeTrack);
+   if (index > 0) {
+     this.start(this.playlist[index - 1]);
    } else {
-     this.start(this.playlist[this.playlist.length -1]);
+     this.start(this.playlist[this.playlist.length - 1]);
    }
   }
 
-  updateProgress(){
+  updateProgress() {
     let seek = this.player.seek();
-    this.progress = (seek / this.player.duration()) * 100 || 0;
+    this.progress = ( +seek / this.player.duration()) * 100 || 0;
     setTimeout(() => {
         this.updateProgress();
-    }, 100)
+    }, 100);
   }
 
-seek(){
-  let newValue = +this.range.value;
-  let duration = this.player.duration();
+seek() {
+  const newValue = +this.range.value;
+  const duration = this.player.duration();
   this.player.seek(duration * (newValue / 100));
 }
 

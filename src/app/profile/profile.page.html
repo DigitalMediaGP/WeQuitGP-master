@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>profile</ion-title>
+    <ion-title class="pagetitle">profile</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,13 +9,16 @@
 <ion-content>
   <!-- <ion-img class="profileicon"src="assets/svgs/profileicon.png" ></ion-img>  -->
   <ion-card>
-    <ion-card-header>
-      <ion-img class="profileicon" src="assets/svgs/profileicon.png"></ion-img>
-      
-    </ion-card-header>
+
+    <br>
+      <ion-img class="profileicon" src="assets/svgs/profileicon.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>  
+   
+
     <ion-card-content>
       <h1 class="user" *ngIf="user" > {{user.email}} </h1>
-      <ion-item></ion-item>
+
+
+
       <ion-list>
         <ion-item>
           <ion-grid>
@@ -29,19 +32,23 @@
             </ion-row>
           </ion-grid>
         </ion-item>
+          
+       
 
-        <ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-col offset-10>
-                <div class="FormTitle">Price of box: </div>
-              </ion-col>
-              <ion-col>
-                <div class="FormResult">€ {{CostOfBox}}</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
+        
+          <ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col offset-10>
+                  <div class="FormTitle">Price of box: </div>
+                </ion-col>
+                <ion-col>
+                  <div class="FormResult">€ {{CostOfBox}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+       
   
 
           <ion-item>
@@ -56,9 +63,10 @@
               </ion-row>
             </ion-grid>
           </ion-item>
+       
         
 
-            <ion-item>
+          <ion-item>
               <ion-grid>
                 <ion-row>
                   <ion-col class="colwidth">
@@ -70,6 +78,7 @@
                 </ion-row>
               </ion-grid>
             </ion-item>
+          
 
            
          
@@ -85,12 +94,7 @@
           <ion-datetime [(ngModel)]="QuitDate"  disabled value></ion-datetime>
         </ion-item>
 
-        <ion-item>
-          <ion-label position="floating"> Cost Per Cigarette</ion-label>
-          <br>
-          <b>{{CostPerCigarette}}</b>
-         
-        </ion-item>
+   
 
        
       </ion-list>

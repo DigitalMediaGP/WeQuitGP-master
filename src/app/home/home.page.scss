@@ -6,3 +6,29 @@
     margin-right: auto;
     
 }
+
+.pagetitle{
+    font-family: 'Ambit-Black';
+    font-size: 1.5em;
+}
+
+
+.btn1{
+    font-family: 'Ambit-SemiBold';
+    color: black;
+}
+
+ion-content{
+  
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ion-card{
+    margin-top: 0em;
+
+    background-color:transparentize($color:#6EB2FD, $amount: 0.2);
+    color: black;
+  }
+

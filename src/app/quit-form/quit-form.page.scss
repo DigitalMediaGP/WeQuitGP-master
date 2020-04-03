@@ -1,6 +1,45 @@
 .test{
     text-align: center;
     font-size: 50px;
-
+    font-family: 'Ambit-Black';
  
   }
+
+ 
+  
+  ion-content{
+  
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ion-card{
+    margin-top: 0em;
+    background-color:transparentize($color:#FFFFFF, $amount: 0);
+    color: black;
+  }
+
+  .ionlabel{
+  font-family: 'Ambit-Bold';
+
+}
+
+.pagetitle{
+  font-family: 'Ambit-Black';
+  font-size: 1.5em;
+}
+
+.ion-text-center{
+  font-family: 'Ambit-SemiBold';
+  font-size: 1em;
+  color: black;
+}
+
+.quitformsvg{
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

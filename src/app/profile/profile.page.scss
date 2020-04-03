@@ -3,31 +3,34 @@
 }
 
 .profileicon{
-    width: 150px;
-    height: 150px;
-    margin-top: 5%;
+    width: 200px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding: 0em;
+
 }
 
 .user{
 text-align: center;
 font-weight: 400;
-font-weight: bold;
+font-family: 'Ambit-SemiBold';
+color: white;
 }
 
 .FormTitle{
+    text-align: left;
     color:black;
     font-weight: bold;
+    font-family: 'Ambit-SemiBold';
    
    
 }
 
 .FormResult{
     color:black;
-  text-align: right;;
+  text-align: right;
+  font-family: 'Ambit-Regular';
 
 }
 
@@ -35,11 +38,13 @@ font-weight: bold;
 .Startdate{
     font-weight: bold;
     color: black;
+    text-align: left;
 }
 
 .QuitDate{
     font-weight: bold;
     color: black;
+    text-align: left;
 }
 
 
@@ -54,3 +59,20 @@ ion-col > div {
     overflow: hidden;
   }
 
+  ion-content{
+  
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ion-card{
+    margin-top: 0em;
+    background-color:transparentize($color:#FFFFFF, $amount: 0);
+    color: black;
+  }
+
+  .pagetitle{
+    font-family: 'Ambit-Black';
+    font-size: 1.5em;
+}

@@ -1,17 +1,17 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>WeQuit</ion-title>
+    <ion-title class="pagetitle">WeQuit</ion-title>
     <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
       <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
+<ion-content class="contentBG">
+  <ion-card class="card">
+
       <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
-    </ion-card-header>
+ 
 
     
     <ion-grid>

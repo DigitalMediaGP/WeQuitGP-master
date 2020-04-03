@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>QuitForm</ion-title>
+    <ion-title class="pagetitle">QuitForm</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,34 +11,33 @@
   <ion-card>
     
     <ion-card-header>
-      <ion-img src="assets/svgs/snapcigarette-01.png" width="20" height="20"></ion-img>
-      <ion-card-title class="test">Quit Form</ion-card-title>
-      <ion-card-subtitle text-center>Your Journey Starts here</ion-card-subtitle>
+      <ion-img class="quitformsvg" src="assets/svgs/snapcigarette-01.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
+      <ion-card-subtitle class="ion-text-center">Fill in your details below.</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label position="floating">Brand</ion-label>
+          <ion-label class="ionlabel" position="floating">Brand</ion-label>
           <ion-input [(ngModel)]="brand" type="text" placeholder="Brand"> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Price of box</ion-label>
+          <ion-label class="ionlabel" position="floating">Price of box</ion-label>
           <ion-input [(ngModel)]="CostOfBox" type="text" placeholder="€ Price "> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Amount per box</ion-label>
+          <ion-label class="ionlabel" position="floating">Amount per box</ion-label>
           <ion-input [(ngModel)]="CigarettesPerBox" type="text" placeholder="Box of "> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Cigarettes per day</ion-label>
+          <ion-label class="ionlabel" position="floating">Cigarettes per day</ion-label>
           <ion-input [(ngModel)]="CigarettesADay" type="text" placeholder="Per day"> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Start Date</ion-label>
+          <ion-label class="ionlabel" >Start Date</ion-label>
           <ion-datetime [(ngModel)]="YearsSmoking" placeholder="Select Date"></ion-datetime>
         </ion-item>
         <ion-item>
-          <ion-label>Quit Date</ion-label>
+          <ion-label class="ionlabel" >Quit Date</ion-label>
           <ion-datetime [(ngModel)]="QuitDate" placeholder="Select Date"></ion-datetime>
         </ion-item>
       </ion-list>

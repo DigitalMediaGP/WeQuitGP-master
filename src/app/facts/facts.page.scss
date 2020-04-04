@@ -2,3 +2,21 @@
     font-family: 'Ambit-Black';
     font-size: 1.5em;
 }
+
+ 
+:root { 
+    --ion-safe-area-top: 25px; 
+    --ion-safe-area-bottom: 27px; 
+    } 
+    .swiper-slide { 
+    display: block; 
+    } 
+    ion-slide > h2 { 
+    margin-top: 3.0rem; 
+    } 
+    ion-slide > img { 
+    max-height: 60%; 
+    max-width: 75%; 
+    margin: 42px 0; 
+    }  
+    

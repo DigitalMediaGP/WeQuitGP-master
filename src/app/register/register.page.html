@@ -1,14 +1,16 @@
 <ion-header>
 	<ion-toolbar color="primary">
-		<ion-buttons slot="start">
-			<ion-back-button></ion-back-button>
+		<ion-buttons slot="start" [routerLink]="['/startpage']">
+			<img class="back_arrow_costum" src="assets/svgs/back.png" alt="">
 		  </ion-buttons>
-	  <ion-title>Register</ion-title>
+	  <ion-title class="pagetitle">Register</ion-title>
 	</ion-toolbar>
   </ion-header>
 
-  <ion-img class="logogyp"src="assets/img/animatedlogo.gif"></ion-img>
-  
+
+  <ion-card-header>
+  <ion-img class="logogyp"src="assets/svgs/register.svg"></ion-img>
+</ion-card-header>
 
 
   <ion-content>
@@ -21,25 +23,25 @@
 			<ion-list>
   
 				<ion-item>
-				  <ion-label position="floating">Username</ion-label>
+				  <ion-label class="ionlabel" position="floating">Username</ion-label>
 				  <ion-input type="text" [(ngModel)]="username"></ion-input>
 				</ion-item>
 			  
 				<ion-item>
-				  <ion-label position="floating">Password</ion-label>
+				  <ion-label class="ionlabel" position="floating">Password</ion-label>
 				  <ion-input type="password" [(ngModel)]="password"></ion-input>
 				</ion-item>
 	  
 				<ion-item>
-				  <ion-label position="floating">Confirm Password</ion-label>
+				  <ion-label  class="ionlabel" position="floating">Confirm Password</ion-label>
 				  <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
 				</ion-item>
 			  
 			  </ion-list>
 	  
 			  <br>
-			  <ion-button fill="solid" expand="block" color="primary" (click)="register()" >Signup</ion-button>
-		  
+			  <ion-button  class="ion-no-margin" fill="solid" expand="block" color="primary" (click)="register()" >SIGNUP</ion-button>
+			  <!-- <ion-button expand="block" type="submit"  class="ion-no-margin"  (click)="login()()">LOGIN</ion-button> -->
 		 
 		</ion-card-content>
 	  </ion-card>

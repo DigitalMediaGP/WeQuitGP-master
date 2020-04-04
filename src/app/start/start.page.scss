@@ -11,3 +11,39 @@
     text-align: center;
     font-size: 30px;
 }
+
+ion-content{
+  
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  ion-card{
+    margin-top: 0em;
+    background-color:transparentize($color:#FFFFFF, $amount: 0);
+    color: black;
+  }
+
+  ion-card-header{
+      background-color:#6EB2FD;
+  }
+
+  .welcome{
+      font-family: 'Ambit-Black';
+      color: white;
+  }
+
+  .ion-text-center{
+      font-family: 'Ambit-SemiBold';
+      font-size: large;
+  }
+
+  .pagetitle{
+    font-family: 'Ambit-Black';
+    font-size: 1.5em;
+}
+
+.ion-no-margin{
+    font-family: 'Ambit-Black';
+}

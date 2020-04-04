@@ -1,5 +1,5 @@
 .logogyp{
-    padding:20px 20px 20px 20px;
+    padding:50px 20px 20px 20px;
     width: 300px;
     height: 300px;
     margin-left: auto;
@@ -11,4 +11,50 @@
 
 .cardtitle{
     text-align: center;
+}
+
+
+
+ion-content{
+  
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  ion-card{
+    margin-top: 0em;
+    background-color:transparentize($color:#FFFFFF, $amount: 0);
+    color: black;
+  }
+
+  ion-card-header{
+      background-color:#CCE4FF;
+  }
+
+  .pagetitle{
+    font-family: 'Ambit-Black';
+    font-size: 1.5em;
+}
+
+ion-header{
+    position: fixed;
+}
+
+.ion-no-margin{
+    font-family: 'Ambit-Black';
+  
+}
+
+.ionlabel{
+ font-family: 'Ambit-Light';
+}
+
+ion-toolbar{
+    position: fixed;
+}
+
+.back_arrow_costum{
+width: 40px;
+height:30px;
 }

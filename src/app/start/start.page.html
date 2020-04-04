@@ -1,11 +1,11 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary">
     
-    <ion-title>Login/Register</ion-title>
+    <ion-title class="pagetitle">Login/Register</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-img class="logogyp"src="assets/img/animatedlogo.gif"></ion-img>
+
 
 
 
@@ -14,7 +14,8 @@
   
     <ion-card>
       <ion-card-header class="cardheader">
-        Welcome to WeQuit!
+        <ion-img class="logogyp"src="assets/img/animatedlogo.gif"></ion-img>
+       <p class="welcome"> Welcome to WeQuit!</p>
       </ion-card-header>
     
       <ion-card-content>
@@ -22,11 +23,11 @@
         <h3 class="ion-text-center"> Do you wish to </h3>
 
         <div class="ion-padding">
-          <ion-button expand="block" type="submit"  class="ion-no-margin" [routerLink]="['/register']" >Register</ion-button>
+          <ion-button expand="block" type="submit"  class="ion-no-margin" [routerLink]="['/register']" >REGISTER</ion-button>
         </div>
-      <h3 class="ion-text-center"> Or </h3>
+      <h3 class="ion-text-center"> OR </h3>
       <div class="ion-padding">
-        <ion-button expand="block" type="submit"  class="ion-no-margin" [routerLink]="['/login']">Log-in</ion-button>
+        <ion-button expand="block" type="submit"  class="ion-no-margin" [routerLink]="['/login']">LOGIN</ion-button>
       </div>
       
   

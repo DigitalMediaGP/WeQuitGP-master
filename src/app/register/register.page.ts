@@ -25,6 +25,8 @@ export class RegisterPage implements OnInit {
 		public router: Router
 		) { }
 
+		
+
 	ngOnInit() {
 	}
 

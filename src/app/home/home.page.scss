@@ -1,5 +1,5 @@
 .logogyp{
-    padding:20px 20px 20px 20px;
+    padding:90px 20px 20px 20px;
     width: 300px;
     height: 300px;
     margin-left: auto;
@@ -31,4 +31,8 @@ ion-card{
     background-color:transparentize($color:#6EB2FD, $amount: 0.2);
     color: black;
   }
+
+  ion-toolbar{
+    position: fixed;
+}
 

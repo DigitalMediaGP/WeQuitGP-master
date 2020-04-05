@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content class="contentBG">
-  <ion-card class="card">
 
       <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
  
@@ -16,75 +15,85 @@
     
     <ion-grid>
       <ion-row>
-        <ion-col>
+        <ion-col col-6>
+          <ion-card text-center padding   [routerLink]="['/journalEntryList']">
+  <ion-icon name="bookmarks"></ion-icon>
+
+          <h2>Diary</h2>
+       </ion-card>
+        </ion-col>
+
+        <ion-col col-6>
+          <ion-card text-center padding  [routerLink]="['/facts']">
+  <ion-icon name="bulb"></ion-icon>
+          <h2>Facts</h2>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  
+
+
+      <ion-row>
+        <ion-col col-6>
+           <ion-card text-center padding  [routerLink]="['/quit-form']">
+  <ion-icon name="document"></ion-icon>
+
+          <h2>Quit Form</h2>
           
-          <ion-button expand="block"  class="btn1" [routerLink]="['/journalEntryList']">Diary</ion-button>
+         </ion-card>
         </ion-col>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" [routerLink]="['/facts']">Smoking Facts</ion-button>
+
+        <ion-col col-6>
+        <ion-card text-center padding  [routerLink]="['/chatforum']">
+  <ion-icon name="chatbubbles"></ion-icon>
+
+          <h2>Chatroom</h2>
+          </ion-card>
         </ion-col>
       </ion-row>
-    </ion-grid>
+ 
 
-    <ion-grid>
+
       <ion-row>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" [routerLink]="['/quit-form']">Quit Form</ion-button>
+        <ion-col col-6>
+        <ion-card text-center padding  [routerLink]="['/financial-page']">
+            <ion-icon name="logo-usd"></ion-icon>
+
+          <h2>Money</h2>
+          </ion-card>
         </ion-col>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" [routerLink]="['/chatforum']" >WeQuit Forum</ion-button>
+
+        <ion-col col-6>
+        <ion-card text-center padding  [routerLink]="['/profile']">
+  <ion-icon name="person"></ion-icon>
+
+          <h2 >Profile</h2>
+          </ion-card>
         </ion-col>
       </ion-row>
-    </ion-grid>
 
-    <ion-grid>
+
+ 
       <ion-row>
-        <ion-col>
-          <ion-button expand="block"  class="btn1"  [routerLink]="['/financial-page']">Financial</ion-button>
+        <ion-col col-6>
+        <ion-card text-center padding  [routerLink]="['/mediation-player']">
+  <ion-icon name="musical-notes"></ion-icon>
+
+          <h2>Meditation</h2>
+       </ion-card>
         </ion-col>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" [routerLink]="['/profile']" >Profile</ion-button>
+
+        <ion-col col-6>
+        <ion-card text-center padding color="danger"  (click)="signOut()">
+  <ion-icon name="log-out"></ion-icon>
+
+          <h2>Logout</h2>
+        </ion-card>
         </ion-col>
+
       </ion-row>
     </ion-grid>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" [routerLink]="['/mediation-player']">Meditation</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button expand="block"  class="btn1" color="danger" (click)="signOut()">Logout</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    
    
 
-    <!-- <div class="ion-padding">
-      <ion-button expand="block" (click)="addUser()" class="ion-no-margin">Finish</ion-button>
-    </div> -->
 
-
-
-    <!-- <ion-card-content>
-      Tobacco smoking during pregnancy increases the risk of the mother having complications
-      during pregnancy and the baby being born with low birthweight. Carbon Monoxide and
-      other contents of cigarettes have harmful effects on the baby’s growth and development.
-    </ion-card-content> -->
-
-   
-
-
-
-
-
-
-
-
-
-  <!-- <p *ngIf="afAuth.auth.currentUser">
-    Thank you for signing up to WeQuit. This app is to aid you in your persute of a healthier lifestyle, 
-    by quitting smoking and/or vaping.
-  </p> -->

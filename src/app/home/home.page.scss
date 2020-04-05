@@ -1,7 +1,7 @@
 .logogyp{
-    padding:90px 20px 20px 20px;
-    width: 300px;
-    height: 300px;
+    padding:30px 20px 20px 20px;
+    width: 350px;
+    height: 350px;
     margin-left: auto;
     margin-right: auto;
     
@@ -12,10 +12,21 @@
     font-size: 1.5em;
 }
 
+ion-icon {
+        font-size: 4.5em;
+        color:#ffffff;
+    }
+
 
 .btn1{
     font-family: 'Ambit-SemiBold';
-    color: black;
+    color: #ffffff;
+    font-size:1em;
+    
+}
+
+.btn1:hover{
+    background-color:#80BCFF;
 }
 
 ion-content{
@@ -26,13 +37,14 @@ ion-content{
   }
 
 ion-card{
-    margin-top: 0em;
+    margin-top: 30px;
 
-    background-color:transparentize($color:#6EB2FD, $amount: 0.2);
-    color: black;
+    background-color:#80BCFF;
   }
 
-  ion-toolbar{
-    position: fixed;
-}
+  h2{
+      color:#ffffff;
+  }
+
+
 

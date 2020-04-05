@@ -28,6 +28,14 @@ export class FactsPage implements OnInit {
      this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/smoking-and-pregnancy/", "_blank");
    }
 
+   openF5() {
+     this.iab.create("https://www.who.int/news-room/fact-sheets/detail/tobacco/", "_blank");
+   }
+
+   openF6() {
+     this.iab.create("https://www2.hse.ie/wellbeing/quit-smoking/reasons-to-quit-smoking/health-benefits-of-stopping-smoking.html", "_blank");
+   }
+
   ngOnInit() {
   }
 

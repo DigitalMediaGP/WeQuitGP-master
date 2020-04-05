@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="pagetitle">Vape Form</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ 
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-img class="quitformsvg" src="assets/svgs/snapcigarette-01.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
+      <ion-card-subtitle class="ion-text-center">Fill in your details below.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label class="ionlabel" position="floating">Brand/Flavour</ion-label>
+          <ion-input [(ngModel)]="brand" type="text" placeholder="Brand/Flavour"> </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ionlabel" position="floating">Price of juice</ion-label>
+          <ion-input [(ngModel)]="CostOfBox" type="text" placeholder="€ Price "> </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ionlabel" position="floating">Juice bottle size (ml)</ion-label>
+          <ion-input [(ngModel)]="CigarettesPerBox" type="text" placeholder="ml"> </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ionlabel" position="floating">Juice used per day</ion-label>
+          <ion-input [(ngModel)]="CigarettesADay" type="text" placeholder="Per day"> </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ionlabel" >Start Date</ion-label>
+          <ion-datetime [(ngModel)]="YearsSmoking" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ionlabel" >Quit Date</ion-label>
+          <ion-datetime [(ngModel)]="QuitDate" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+      </ion-list>
+      <div class="ion-padding">
+        <ion-button expand="block" (click)="addUser()" class="ion-no-margin">Finish</ion-button>
+      </div>
+
+
+
+
+
+    </ion-card-content>
+
+
+
+  </ion-card>
+</ion-content>

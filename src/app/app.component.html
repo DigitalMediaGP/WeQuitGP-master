@@ -13,13 +13,21 @@
                 <ion-icon name="home"></ion-icon>
                 <ion-label> Home</ion-label>
               </ion-item>
+              <ion-item [routerLink]="['/profile']" >
+              <ion-icon name="person"></ion-icon>
+               <ion-label>Profile</ion-label>
+            </ion-item> 
             <ion-item [routerLink]="['/journalEntryList']">
               <ion-icon name="book"></ion-icon>
               <ion-label>Diary</ion-label>
             </ion-item>
+            <ion-item [routerLink]="['/financial-page']" >
+              <ion-icon name="cash"></ion-icon> 
+               <ion-label>Financial</ion-label>
+            </ion-item> 
             <ion-item [routerLink]="['/facts']" >
               <ion-icon name="logo-no-smoking"></ion-icon>
-              <ion-label>Smoking Facts</ion-label>
+              <ion-label>Health</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/quit-form']" >
               <ion-icon name="md-clipboard"></ion-icon>
@@ -27,24 +35,18 @@
             </ion-item> 
             <ion-item [routerLink]="['/vapeform']">
                 <ion-icon name="md-clipboard"></ion-icon>
-                <ion-label> Vape Form</ion-label>
+                <ion-label>Vape Form</ion-label>
               </ion-item>
             <ion-item [routerLink]="['/chatforum']" >
               <ion-icon name="chatbubbles"></ion-icon>
-               <ion-label>We Quit Forum</ion-label>
+               <ion-label>Chatroom</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/mediation-player']" >
               <ion-icon name="body"></ion-icon>
                <ion-label>Meditation</ion-label>
             </ion-item> 
-            <ion-item [routerLink]="['/financial-page']" >
-              <ion-icon name="cash"></ion-icon> 
-               <ion-label>Financial</ion-label>
-            </ion-item> 
-            <ion-item [routerLink]="['/profile']" >
-              <ion-icon name="person"></ion-icon>
-               <ion-label>Profile</ion-label>
-            </ion-item> 
+            
+            
             <ion-item button (click)="signOut()"> 
               <ion-icon  name="log-out"></ion-icon>
                <ion-label>Logout</ion-label>

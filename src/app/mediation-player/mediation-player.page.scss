@@ -1,5 +1,5 @@
 ion-content, ion-list, ion-item{
-    --background: var(--ion-color-dark);
+    --background: var(--ion-color-primary);
     --ion-background-color: var(--ion-color-dark);
 }
 
@@ -13,7 +13,16 @@ ion-content, ion-list, ion-item{
 
 }
 
+
+
 .pagetitle{
     font-family: 'Ambit-Black';
     font-size: 1.5em;
+}
+
+
+ion-content{
+    --background: url('../../assets/img/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

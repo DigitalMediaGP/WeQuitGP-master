@@ -5,6 +5,7 @@ import { JournalService } from '../services/journal.service';
 import { Observable } from 'rxjs';
 import { userinfo } from '../userinfo';
 import { ActivatedRoute, Router } from '@angular/router';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-financial-page',
@@ -16,11 +17,11 @@ export class FinancialPagePage implements OnInit {
     //get a hold of the user in the app
     afAuth.authState.subscribe(user => {
       this.user = user;
-      console.log(this.user)
+      //console.log(this.user)
     });
   }
   //load in the details for the user.. get a hold of this data
-  private userDetails: Observable<userinfo[]>;
+  private userDetails: Observable<any>;
   user: firebase.User = null;
   //variable to be added as user information to be database
   brand: string = ""
@@ -39,11 +40,12 @@ export class FinancialPagePage implements OnInit {
   costPerYear:string
   //updateUser:number
   ngOnInit() {
-    this.userDetails = this.service.getUsers()
-    //console.log(this.userDetails)
   }
   ionViewWillEnter() {
+    //console.log(this.userDetails.forEach(element))
     //this.updateUser = 0
+    this.userDetails = this.service.getUsers()
+    console.log(this.userDetails)
     this.userDetails.forEach(element => {
       console.log(element)
       for (let index = 0; index < element.length; index++) {
@@ -62,7 +64,6 @@ export class FinancialPagePage implements OnInit {
           this.costPerWeek = parseFloat((Math.round(this.costPerDay*7 * 100) / 100).toFixed(2)) //cost per week 
           this.costPerMonth = parseFloat((this.costPerDay*28).toString()).toFixed(2) //cost per month
           this.costPerYear = parseFloat((this.costPerWeek*28).toString()).toFixed(2) //cost per year
-
 
           // this.PricePerDay = this.
           console.log(this.costPerYear)

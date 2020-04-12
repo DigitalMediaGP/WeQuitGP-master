@@ -17,11 +17,9 @@ export class QuitFormPage implements OnInit {
     });
   }
   //load in the details for the user.. get a hold of this data
-  private userDetails:Observable<userinfo[]>;
-  private addThisUser:userinfo
-
+  userDetails:Observable<userinfo[]>
+  addThisUser:userinfo
   myDate = new Date().toISOString(); // date picker format
-
   user: firebase.User;
   //variable to be added as user information to be database
   brand:string
@@ -31,29 +29,18 @@ export class QuitFormPage implements OnInit {
   YearsSmoking:number
   QuitDate:number
   //for deciding if user should update or add
-  updateUser:number
-
+  updateUser:number = 0;
   ngOnInit() { 
-    this.userDetails = this.service.getUsers()
-    //console.log(this.userDetails)
+    //console.log(this.user.email)
   }
-
-  dateChanged(date){  // date picker
-    //console.log(date.detail.value);
-    //console.log(this.myDate);
-  }
-  //dateChanged2
-
-
-
-
   ionViewWillEnter(){
-    this.updateUser = 0
-    this.userDetails.forEach(element => {
+    this.userDetails = this.service.getUsers()
+    this.updateUser = 0 
+    this.userDetails.forEach(async element => {
       console.log(element)
       for (let index = 0; index < element.length; index++) {
         //add all of the previously entered 
-        if(element[index].UserName==this.user.email)
+        if(element[index].UserName == this.user.email)
         {
           this.addThisUser = element[index]
           //console.log(this.addThisUser)
@@ -65,18 +52,16 @@ export class QuitFormPage implements OnInit {
           this.YearsSmoking = element[index].YearsSmoking
           this.QuitDate = element[index].QuitDate
           //if found then add user becomes update
-          //console.log('User found!')
+          console.log('User found!')
           this.updateUser = 1
-        }
-        else
-        {
-          this.updateUser = 0
         }
       }
     })
   }
+  //when the button is
   addUser(){
     //if the user info previously stored has been found
+    console.log(this.updateUser)
     if(this.updateUser == 1)
     {
       this.addThisUser.Brand = this.brand
@@ -91,7 +76,7 @@ export class QuitFormPage implements OnInit {
         console.log(this.addThisUser)
         //this.updateUser=0
       })
-      //reset check for updating a user 
+      //reset check for updating a user
     }
     else//no user found
     {
@@ -113,15 +98,6 @@ export class QuitFormPage implements OnInit {
         alert('Statistics saved');
       });
     } 
-   //to be finished - form validation
-   //if any of the form hasn't been filled out.. don't do anything and alert the user
-   //if(this.brand == "" || this.CigarettesADay == null || this.CigarettesPerBox == null || this.CostOfBox == null || this.YearsSmoking==null)
-   //{
-   //alert("please fill in all details")
-   //}
-   //else
-   //{
-   //add the user here
-   //}
   }
 }
+//getting the for each to work

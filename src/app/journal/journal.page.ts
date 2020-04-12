@@ -23,9 +23,10 @@ export class JournalPage implements OnInit {
     });
   } 
   ngOnInit() { 
-    this.journals = this.journalService.getJournals();  
+     
   }
   ionViewWillEnter(){
+    this.journals = this.journalService.getJournals(); 
     //only update view whne this variable is set 
     this.updateview = true
     //empty array to avoid displaying duplicates
@@ -40,7 +41,6 @@ export class JournalPage implements OnInit {
       for (let index = 0; index < element.length; index++) {
         if(element[index].user==this.user.email)
         {
-          //console.log('User found!')
           this.addUserNotes(element[index])
         }         
       }
@@ -53,11 +53,6 @@ export class JournalPage implements OnInit {
       }  
   });
 }
-  //unused for the moment
-  ionViewDidLeave(){
-    //console.log('leaving view')
-    //empty list for next entry
-  }
   //add the notes specific to the user to the array for display
   addUserNotes(journalEntry:Journal)
   {

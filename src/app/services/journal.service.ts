@@ -6,18 +6,39 @@ import { userinfo } from '../userinfo';
 import { AngularFirestore, AngularFirestoreCollection, DocumentReference } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
+import { element } from 'protractor';
 @Injectable({
   providedIn: 'root'
 })
 export class JournalService {
   //original journal info... not used atm
-  private journals: Observable<Journal[]>;
-  private journalCollection: AngularFirestoreCollection<Journal>;
+  journals: Observable<any>;
+  journalCollection: AngularFirestoreCollection<Journal>;
   //the collection of user data in memory
-  private users: Observable<userinfo[]>;
+  users: Observable<any>;
   //used to connect to the collection of userinfo objects in firebase
-  private usersCollection: AngularFirestoreCollection<userinfo>;
+  usersCollection: AngularFirestoreCollection<userinfo>;
   constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth) {
+  }
+  //bring all users from the database into memory
+  getUsers(): Observable<any> {
+     //get collection from 'user' on firebase
+     this.usersCollection = this.afs.collection<userinfo>('user');
+     //now save all the info into a collection we can access in memory.
+     this.users = this.usersCollection.snapshotChanges().pipe(
+       map(actions => {
+         return actions.map(a => {
+           const data = a.payload.doc.data();
+           const id = a.payload.doc.id;
+           return { id, ...data };
+         });
+       })
+     );
+     this.users.forEach(element=>{console.log(element)})
+     console.log("testing changes")
+     return this.users;
+  }
+  getJournals(): Observable<any> {
     this.journalCollection = this.afs.collection<Journal>('journals');
     this.journals = this.journalCollection.snapshotChanges().pipe(
       map(actions => {
@@ -28,24 +49,6 @@ export class JournalService {
         });
       })
     );
-    //get collection from 'user' on firebase
-    this.usersCollection = this.afs.collection<userinfo>('user');
-    //now save all the info into a collection we can access in memory.
-    this.users = this.usersCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          return { id, ...data };
-        });
-      })
-    );
-  }
-  //bring all users from the database into memory
-  getUsers(): Observable<userinfo[]> {
-    return this.users;
-  }
-  getJournals(): Observable<Journal[]> {
     return this.journals;
   }
   getJournal(id: string): Observable<Journal> {

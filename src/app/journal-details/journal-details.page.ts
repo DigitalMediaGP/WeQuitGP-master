@@ -12,10 +12,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./journal-details.page.scss'],
 })
 export class JournalDetailsPage implements OnInit {
-  private user: firebase.User;
-  private journals: Observable<Journal[]>;
-  private users:Observable<userinfo[]>;
-  private journal: Journal = null;
+  user: firebase.User;
+  journal: Journal = null;
   id = null;
   constructor(private afAuth:AngularFireAuth, private activatedRoute: ActivatedRoute, private journalService: JournalService,private toastCtrl: ToastController,private router: Router) 
   {

@@ -50,7 +50,6 @@ export class RegisterPage implements OnInit {
 			this.presentAlert('Success', 'You are registered!')
 			this.router.navigate(['/home'])
 		} catch(error) {
-			console.dir(error)
 			alert(error);
 		}
 	}

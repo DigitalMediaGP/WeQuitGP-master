@@ -61,43 +61,49 @@ export class QuitFormPage implements OnInit {
   //when the button is
   addUser(){
     //if the user info previously stored has been found
-    console.log(this.updateUser)
-    if(this.updateUser == 1)
+    if(this.brand==null || this.brand == "" || this.CostOfBox == 0 || this.CigarettesADay == 0 || this.CigarettesPerBox == 0 || this.YearsSmoking == 0 || this.QuitDate == 0)
     {
-      this.addThisUser.Brand = this.brand
-      this.addThisUser.CigarettesADay = this.CigarettesADay
-      this.addThisUser.CigarettesPerBox = this.CigarettesPerBox
-      this.addThisUser.CostOfBox = this.CostOfBox
-      this.addThisUser.YearsSmoking = this.YearsSmoking
-      this.addThisUser.QuitDate = this.QuitDate
-      this.service.updateuser(this.addThisUser).then(() => {
-        this.router.navigateByUrl('/home');
-        alert('Statistics updated');
-        console.log(this.addThisUser)
-        //this.updateUser=0
-      })
-      //reset check for updating a user
+      alert("all fields must be filled")
     }
-    else//no user found
+    else 
     {
-      //add user - first time adding user
-      //build user object for database    
-      this.addThisUser =
+      if(this.updateUser == 1)
       {
-        Brand:this.brand,
-        CigarettesADay: this.CigarettesADay,
-        CigarettesPerBox: this.CigarettesPerBox,
-        CostOfBox: this.CostOfBox,
-        YearsSmoking: this.YearsSmoking,
-        UserName:this.user.email,
-        QuitDate:this.QuitDate,  
+        this.addThisUser.Brand = this.brand
+        this.addThisUser.CigarettesADay = this.CigarettesADay
+        this.addThisUser.CigarettesPerBox = this.CigarettesPerBox
+        this.addThisUser.CostOfBox = this.CostOfBox
+        this.addThisUser.YearsSmoking = this.YearsSmoking
+        this.addThisUser.QuitDate = this.QuitDate
+        this.service.updateuser(this.addThisUser).then(() => {
+          this.router.navigateByUrl('/financial-page');
+          alert('Statistics updated');
+          console.log(this.addThisUser)
+          //this.updateUser=0
+        })
+        //reset check for updating a user
       }
-      this.service.adduser(this.addThisUser).then(() => {
-        // this.router.navigateByUrl('/home');
-        console.log(this.addThisUser)
-        alert('Statistics saved');
-      });
-    } 
-  }
+      else//no user found
+      {
+        //add user - first time adding user
+        //build user object for database  
+        this.addThisUser =
+        {
+          Brand:this.brand,
+          CigarettesADay: this.CigarettesADay,
+          CigarettesPerBox: this.CigarettesPerBox,
+          CostOfBox: this.CostOfBox,
+          YearsSmoking: this.YearsSmoking,
+          UserName:this.user.email,
+          QuitDate:this.QuitDate,  
+        }
+        this.service.adduser(this.addThisUser).then(() => {
+          this.router.navigateByUrl('/financial-page');
+          console.log(this.addThisUser)
+          alert('Statistics saved');
+        });
+      } 
+    }
 }
-//getting the for each to work
+}
+

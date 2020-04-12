@@ -20,10 +20,7 @@ export class LoginPage implements OnInit {
 		    await this.afAuth.auth.signInWithEmailAndPassword(username + '@wequit.com', password)
 			this.router.navigate(['/home'])
 		} catch(err) {
-			console.dir(err)
-			if(err.code === "auth/user-not-found") {
-				console.log("User not found")
-			}
+			alert(err)
 		}
 	}
 

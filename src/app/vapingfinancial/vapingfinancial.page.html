@@ -1,11 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="pagetitle">Smoking Financial</ion-title>
+    <ion-title class="pagetitle">Vaping Financial</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <!-- <ion-img class="profileicon"src="assets/svgs/profileicon.png" ></ion-img>  -->
@@ -25,12 +26,12 @@
       <ion-item></ion-item>
       <ion-item>
         <ion-label class="Startdate">Start Date</ion-label>
-        <ion-datetime [(ngModel)]="YearsSmoking" disabled value></ion-datetime>
+        <ion-datetime [(ngModel)]="startdate" disabled value></ion-datetime>
       </ion-item>
 
       <ion-item>
         <ion-label class="QuitDate">Quit Date</ion-label>
-        <ion-datetime [(ngModel)]="QuitDate" disabled value></ion-datetime>
+        <ion-datetime [(ngModel)]="quitdate" disabled value></ion-datetime>
       </ion-item>
 
       <ion-list>
@@ -38,10 +39,10 @@
           <ion-grid>
             <ion-row>
               <ion-col offset-10>
-                <div class="FormTitle">Brand: </div>
+                <div class="FormTitle">Brand/Flavour: </div>
               </ion-col>
               <ion-col>
-                <div class="FormResult">{{brand}}</div>
+                <div class="FormResult">{{flavour}}</div>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -51,10 +52,10 @@
           <ion-grid>
             <ion-row>
               <ion-col offset-10>
-                <div class="FormTitle">Price of box: </div>
+                <div class="FormTitle">Price of bottle: </div>
               </ion-col>
               <ion-col>
-                <div class="FormResult">€{{CostOfBox}}</div>
+                <div class="FormResult">€{{priceofbottle}}</div>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -65,38 +66,23 @@
           <ion-grid>
             <ion-row>
               <ion-col class="colwidth">
-                <div class="FormTitle">Amount per box: </div>
+                <div class="FormTitle">Use per day: </div>
               </ion-col>
               <ion-col>
-                <div class="FormResult">{{CigarettesPerBox}}</div>
+                <div class="FormResult">{{useperday}}</div>
               </ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
 
-
         <ion-item>
           <ion-grid>
             <ion-row>
               <ion-col class="colwidth">
-                <div class="FormTitle">Cigarettes per day: </div>
+                <div class="FormTitle">Bottles per week: </div>
               </ion-col>
               <ion-col>
-                <div class="FormResult">{{CigarettesADay}}</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-
-  
-        <ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-col class="colwidth">
-                <div class="FormTitle">Cost per cigarette: </div>
-              </ion-col>
-              <ion-col>
-                <div class="FormResult">€{{CostPerCigarette}}</div>
+                <div class="FormResult">{{bottlespurchasedweekly}}</div>
               </ion-col>
             </ion-row>
           </ion-grid>

@@ -22,11 +22,11 @@ export class MediationPlayerPage implements OnInit {
     },
     {
       name: 'Track 2',
-      path: './assets/Meditationplayer/Track1.mp3'
+      path: './assets/Meditationplayer/Track2.mp3'
     },
     {
       name: 'Track 3',
-      path: './assets/Meditationplayer/Track1.mp3'
+      path: './assets/Meditationplayer/Track3.mp3'
     }
   ];
 

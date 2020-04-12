@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="pagetitle">profile</ion-title>
+    <ion-title class="pagetitle">Profile</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,13 +11,12 @@
   <ion-card>
 
     <ion-card-header>
-      <ion-img class="profileicon" src="assets/svgs/profileicon.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>  
+      <ion-img class="profileicon" src="assets/svgs/profileicon.svg" viewBox="0 0 500 500" x="0px" y="0px"
+        xml:space="preserve"></ion-img>
     </ion-card-header>
 
     <ion-card-content>
-      <h1 class="user" *ngIf="user" > {{user.email}} </h1>
-    
-
+      <h1 class="user" *ngIf="user"> {{user.email}} </h1>
 
       <ion-list>
         <ion-item>
@@ -32,76 +31,71 @@
             </ion-row>
           </ion-grid>
         </ion-item>
-          
-       
-
-        
-          <ion-item>
-            <ion-grid>
-              <ion-row>
-                <ion-col offset-10>
-                  <div class="FormTitle">Price of box: </div>
-                </ion-col>
-                <ion-col>
-                  <div class="FormResult">€ {{CostOfBox}}</div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-item>
-       
-  
-
-          <ion-item>
-            <ion-grid>
-              <ion-row>
-                <ion-col class="colwidth">
-                  <div class="FormTitle">Amount per box: </div>
-                </ion-col>
-                <ion-col>
-                  <div class="FormResult">{{CigarettesPerBox}}</div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-item>
-       
-        
-
-          <ion-item>
-              <ion-grid>
-                <ion-row>
-                  <ion-col class="colwidth">
-                    <div class="FormTitle">Cigarettes per day: </div>
-                  </ion-col>
-                  <ion-col>
-                    <div class="FormResult">{{CigarettesADay}}</div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-item>
-          
-
-           
-         
 
 
-        <ion-item >
+
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col offset-10>
+                <div class="FormTitle">Price of box: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">€ {{CostOfBox}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Amount per box: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{CigarettesPerBox}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="colwidth">
+                <div class="FormTitle">Cigarettes per day: </div>
+              </ion-col>
+              <ion-col>
+                <div class="FormResult">{{CigarettesADay}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+
+        <ion-item>
           <ion-label class="Startdate">Start Date</ion-label>
-          <ion-datetime  [(ngModel)]="YearsSmoking"  disabled value></ion-datetime>
+          <ion-datetime [(ngModel)]="YearsSmoking" disabled value></ion-datetime>
         </ion-item>
 
         <ion-item>
           <ion-label class="QuitDate">Quit Date</ion-label>
-          <ion-datetime [(ngModel)]="QuitDate"  disabled value></ion-datetime>
+          <ion-datetime [(ngModel)]="QuitDate" disabled value></ion-datetime>
         </ion-item>
-
-   
-
-       
       </ion-list>
-
-
-
-  
     </ion-card-content>
   </ion-card>
+
+
+  <!--  -->
+
+  
+
+  
 </ion-content>

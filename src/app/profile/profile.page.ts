@@ -37,7 +37,6 @@ export class ProfilePage implements OnInit {
   //updateUser:number
   ngOnInit() {
     this.userDetails = this.service.getUsers()
-    //console.log(this.userDetails)
   }
   ionViewWillEnter() {
     //this.updateUser = 0
@@ -52,16 +51,6 @@ export class ProfilePage implements OnInit {
           this.CostOfBox = element[index].CostOfBox
           this.YearsSmoking = element[index].YearsSmoking
           this.QuitDate = element[index].QuitDate
-
-          this.costPerYear = this.CostOfBox*52
-          
-          this.CostPerCigarette = this.CostOfBox/this.CigarettesPerBox
-          // this.PricePerDay = this.
-          console.log(this.costPerYear)
-          console.log(this.CostPerCigarette)
-
-         
-
         }
       }
     })

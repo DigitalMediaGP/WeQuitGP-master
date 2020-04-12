@@ -1,107 +1,97 @@
 <ion-header>
-    <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
-      <!-- <ion-menu-button></ion-menu-button> -->
-    </ion-buttons>
+  <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
+    <!-- <ion-menu-button></ion-menu-button> -->
+  </ion-buttons>
 </ion-header>
 
 <ion-content class="contentBG">
 
-      <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
- 
+  <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
 
-    
-    <ion-grid>
-      <ion-row>
-        
 
-                <ion-col col-6>
-        <ion-card text-center padding  [routerLink]="['/profile']">
-  <ion-icon name="person"></ion-icon>
 
-          <h2 >Profile</h2>
-          </ion-card>
-        </ion-col>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/profile']">
+          <ion-icon name="person"></ion-icon>
+          <h2>Profile</h2>
+        </ion-card>
+      </ion-col>
 
-        <ion-col col-6>
-          <ion-card text-center padding   [routerLink]="['/journalEntryList']">
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/journalEntryList']">
           <ion-icon name="book"></ion-icon>
-
           <h2>Diary</h2>
-       </ion-card>
-        </ion-col>
-      </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
-       
-  
-
-
-      <ion-row>
-        <ion-col col-6>
-           <ion-card text-center padding  [routerLink]="['/quit-form']">
-  <ion-icon name="md-clipboard"></ion-icon>
-
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/quit-form']">
+          <ion-icon name="md-clipboard"></ion-icon>
           <h2>Quit Form</h2>
-          
-         </ion-card>
-        </ion-col>
- <ion-col col-6>
-           <ion-card text-center padding  [routerLink]="['/vapeform']">
-  <ion-icon name="md-clipboard"></ion-icon>
-
+        </ion-card>
+      </ion-col>
+     
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/vapeform']">
+          <ion-icon name="md-clipboard"></ion-icon>
           <h2>Vape Form</h2>
-          
-         </ion-card>
-        </ion-col>
-        
-      </ion-row>
- 
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
 
-      <ion-row>
-        <ion-col col-6>
-        <ion-card text-center padding  [routerLink]="['/financial-page']">
-            <ion-icon name="cash"></ion-icon>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/financial-page']">
+          <ion-icon name="cash"></ion-icon>
+          <h2>Smoking Financial</h2>
+        </ion-card>
+      </ion-col>
 
-          <h2>Financial</h2>
-          </ion-card>
-        </ion-col>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/vapingfinancial']">
+          <ion-icon name="cash"></ion-icon>
+          <h2>Vaping Financial</h2>
+        </ion-card>
+      </ion-col>
 
-        <ion-col col-6>
-        <ion-card text-center padding  [routerLink]="['/mediation-player']">
-  <ion-icon name="body"></ion-icon>
+      
 
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/mediation-player']">
+          <ion-icon name="body"></ion-icon>
           <h2>Meditation</h2>
-       </ion-card>
-        </ion-col>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+  
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/facts']">
+          <ion-icon name="medkit"></ion-icon>
+          <h2>Health</h2>
+        </ion-card>
+      </ion-col>
 
-        </ion-row>
-<ion-row>
-         <ion-col col-6>
-          <ion-card text-center padding  [routerLink]="['/facts']">
-  <ion-icon name="medkit"></ion-icon>
-            <h2>Health</h2>
-          </ion-card>
-        </ion-col>
-<ion-col col-6>
-        <ion-card text-center padding  [routerLink]="['/chatforum']">
-  <ion-icon name="chatbubbles"></ion-icon>
-
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/chatforum']">
+          <ion-icon name="chatbubbles"></ion-icon>
           <h2>Chatroom</h2>
-          </ion-card>
-        </ion-col>
+        </ion-card>
+      </ion-col>
 
- </ion-row>    
-<ion-row>
-        <ion-col col-12>
-        <ion-card class="signout" text-center color="danger"  (click)="signOut()">
-
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card class="signout" text-center color="danger" (click)="signOut()">
           <h2>Logout</h2>
         </ion-card>
-        </ion-col>
+      </ion-col>
 
-      </ion-row>
-    </ion-grid>
-
-   
-
-
+    </ion-row>
+  </ion-grid>

@@ -11,40 +11,40 @@
             <ion-menu-toggle>
               <ion-item [routerLink]="['/home']">
                 <ion-icon name="home"></ion-icon>
-                <ion-label> Home</ion-label>
+                <ion-label class="menufont"> Home</ion-label>
               </ion-item>
               <ion-item [routerLink]="['/profile']" >
               <ion-icon name="person"></ion-icon>
-               <ion-label>Profile</ion-label>
+               <ion-label class="menufont">Profile</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/journalEntryList']">
               <ion-icon name="book"></ion-icon>
-              <ion-label>Diary</ion-label>
+              <ion-label class="menufont">Diary</ion-label>
             </ion-item>
             <ion-item [routerLink]="['/financial-page']" >
               <ion-icon name="cash"></ion-icon> 
-               <ion-label>Smoking Financial</ion-label>
+               <ion-label class="menufont">Smoking Habit</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/vapingfinancial']" >
               <ion-icon name="cash"></ion-icon> 
-               <ion-label>Vaping Financial</ion-label>
+               <ion-label class="menufont">Vaping Habit</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/facts']" >
               <ion-icon name="medkit"></ion-icon>
-              <ion-label>Health</ion-label>
+              <ion-label class="menufont">Health</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/quit-form']" >
               <ion-icon name="md-clipboard"></ion-icon>
-               <ion-label>Cigarette Form</ion-label>
+               <ion-label class="menufont">Quit Smoking</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/vapeform']">
                 <ion-icon name="md-clipboard"></ion-icon>
-                <ion-label>Vape Form</ion-label>
+                <ion-label class="menufont">Quit Vaping</ion-label>
               </ion-item>
 
               <ion-item [routerLink]="['/dailytracker']">
                 <ion-icon name="logo-no-smoking"></ion-icon>
-                <ion-label>Tracker</ion-label>
+                <ion-label class="menufont">Tracker</ion-label>
               </ion-item>
            
 
@@ -54,21 +54,23 @@
     
             <ion-item [routerLink]="['/chatforum']" >
               <ion-icon name="chatbubbles"></ion-icon>
-               <ion-label>Chatroom</ion-label>
+               <ion-label class="menufont">WeQuit Chat</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/mediation-player']" >
               <ion-icon name="body"></ion-icon>
-               <ion-label>Meditation</ion-label>
+               <ion-label class="menufont">Meditation</ion-label>
             </ion-item> 
             <ion-item [routerLink]="['/about']" >
               <ion-icon name="information-circle-outline"></ion-icon>
-               <ion-label>About</ion-label>
+               <ion-label class="menufont">About</ion-label>
             </ion-item> 
-        
-            
+
+  
+          
+
             <ion-item button (click)="signOut()"> 
               <ion-icon  name="log-out"></ion-icon>
-               <ion-label>Logout</ion-label>
+               <ion-label class="menulogout">Logout</ion-label>
             </ion-item> 
 
 

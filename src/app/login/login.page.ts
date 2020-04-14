@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 		const { username, password } = this
 		try {
 		    await this.afAuth.auth.signInWithEmailAndPassword(username + '@wequit.com', password)
-			this.router.navigate(['/home'])
+			this.router.navigate(['/loginwelcome'])
 		} catch(err) {
 			alert(err)
 		}

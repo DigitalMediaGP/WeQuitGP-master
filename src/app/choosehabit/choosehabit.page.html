@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-buttons slot="start" *ngIf="afAuth.auth.currentUser">
+    <!-- <ion-menu-button></ion-menu-button> -->
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="contentBG">
+
+  <ion-img class="logogyp" src="assets/img/animatedlogo.gif" *ngIf="afAuth.auth.currentUser"></ion-img>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/quit-form']">
+          <ion-icon name="logo-no-smoking"></ion-icon>
+          <h2>Quit Smoking</h2>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card text-center padding [routerLink]="['/vapeform']">
+          <ion-icon name="cloud"></ion-icon>
+          <h2>Quit Vaping</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  

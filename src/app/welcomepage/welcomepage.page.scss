@@ -1,70 +1,60 @@
 .pagetitle{
     font-family: 'Ambit-Black';
     font-size: 1.5em;
-}
-
-p{
-    text-align: center;
+  }
+  
+  p{
+    text-align: left;
     color:#ffffff;
     font-size:1em;
     margin: 30px 20px;
     font-family: 'Ambit-Regular';
-}
-
-li{
-    font-family: 'Ambit-Regular';
-    color:#ffffff;
-
-}
-
-h2{
+  }
+  
+  h2{
     font-size:1.5em;
     color:#ffffff;
     text-align: center;
     font-family: 'Ambit-Black';
   }
 
-  h3{
-    // font-size:1.5em;
+  h1{
+    font-size:1.5em;
     color:#ffffff;
-    text-align: center;
     font-family: 'Ambit-Black';
   }
 
-h5{
+  h5{
     color: #ffffff;
-    color:#ffffff;
-    text-align: center;
     font-family: 'Ambit-Black';
-}
-
-ion-content{
+  }
+  
+  ion-content{
     --background: url('../../assets/img/BG2.png');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-ul{
+  }
+  
+  ul{
     text-align:left;
     color:#ffffff;
-}
-
-.facts{
+  }
+  
+  .facts{
     text-align:center;
+  }
+  
+  h3{
     color:#ffffff;
-    font-family: 'Ambit-Regular';
-}
-
-h3{
-    color:#ffffff;
-}
-
-
-ion-item-divider{
+    font-family: 'Ambit-Black';
+  }
+  
+  
+  ion-item-divider{
     margin-top: 0px;
     min-height: 1px!important;
   }
-:root {
+  :root {
     --ion-safe-area-top: 25px;
     --ion-safe-area-bottom: 27px;
     }
@@ -81,13 +71,24 @@ ion-item-divider{
     }
 
     ion-icon {
-        font-size: 2em;
+        font-size: 4.5em;
         color:#ffffff;
     }
 
- 
 
-    ion-button{
-        font-family: 'Ambit-Black';
-      
-    }
+.btn1{
+    font-family: 'Ambit-SemiBold';
+    color: #ffffff;
+    font-size:1em;
+    
+}
+
+.btn1:hover{
+    background-color:#80BCFF;
+}
+
+ion-card{
+    margin-top: 30px;
+
+    background-color:#80BCFF;
+  }

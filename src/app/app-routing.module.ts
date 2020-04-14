@@ -18,7 +18,10 @@ const routes: Routes = [
   { path: 'financial-page', loadChildren: './financial-page/financial-page.module#FinancialPagePageModule' },  { path: 'vapeform', loadChildren: './vapeform/vapeform.module#VapeformPageModule' },
   { path: 'vapingfinancial', loadChildren: './vapingfinancial/vapingfinancial.module#VapingfinancialPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
-  { path: 'dailytracker', loadChildren: './dailytracker/dailytracker.module#DailytrackerPageModule' }
+  { path: 'dailytracker', loadChildren: './dailytracker/dailytracker.module#DailytrackerPageModule' },
+  { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
+  { path: 'choosehabit', loadChildren: './choosehabit/choosehabit.module#ChoosehabitPageModule' },
+  { path: 'loginwelcome', loadChildren: './loginwelcome/loginwelcome.module#LoginwelcomePageModule' }
 
 
 ];

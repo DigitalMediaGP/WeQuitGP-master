@@ -16,7 +16,9 @@ const routes: Routes = [
   { path: 'chatforum', loadChildren: './chatforum/chatforum.module#ChatforumPageModule' },
   { path: 'mediation-player', loadChildren: './mediation-player/mediation-player.module#MediationPlayerPageModule' },
   { path: 'financial-page', loadChildren: './financial-page/financial-page.module#FinancialPagePageModule' },  { path: 'vapeform', loadChildren: './vapeform/vapeform.module#VapeformPageModule' },
-  { path: 'vapingfinancial', loadChildren: './vapingfinancial/vapingfinancial.module#VapingfinancialPageModule' }
+  { path: 'vapingfinancial', loadChildren: './vapingfinancial/vapingfinancial.module#VapingfinancialPageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'dailytracker', loadChildren: './dailytracker/dailytracker.module#DailytrackerPageModule' }
 
 
 ];

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="pagetitle">Tracker</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+<ion-card>
+  <ion-card-header>
+    <ion-img class="quitformsvg" src="assets/svgs/tracker.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
+    <ion-card-subtitle class="ion-text-center">How many Cigarettes did you smoke today?</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label class="ionlabel" position="floating">Amount</ion-label>
+        <ion-input [(ngModel)]="brand" type="text" placeholder="0"> </ion-input>
+      </ion-item>
+     
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="submit()" class="ion-no-margin">Submit</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

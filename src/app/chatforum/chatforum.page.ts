@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
-
+import { ChatService } from '../services/chat.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-chatforum',
@@ -9,47 +10,19 @@ import { IonContent } from '@ionic/angular';
 })
 export class ChatforumPage implements OnInit {
 
-  messages = [
-    {
-      user: 'James',
-      createdAt: 3232342141,
-      msg: 'im good now , yourself ?'
-
-    },
-    {
-      user: 'Mike',
-      createdAt: 54321234,
-      msg: 'Hey how are you?'
-
-    },
-    {
-      user: 'Mike',
-      createdAt: 5432343,
-      msg: 'Not too bad now'
-
-    },
-  ];
-
-  currentUser = 'James';
-  newMsg = '';
+  messages = [];
+  newMsg:string
+  currentUser:string
   //@ViewChild(IonContent) content:IonContent
-  constructor() { }
-
-  sendMessage(){
-    this.messages.push({
-      user: 'mike',
-      createdAt: new Date().getTime(),
-      msg: this.newMsg
-    });
-
-    this.newMsg = '';
-    setTimeout(() => {
-    //this.content.scrollToBottom(200);
-  });
-}
-
+  constructor(private webchatclient:ChatService, private user:AngularFireAuth) { }
 
   ngOnInit() {
+    this.messages = this.webchatclient.getConvo();
+    this.currentUser = this.user.auth.currentUser.email
   }
-
+  sendMessage(){
+      console.log(this.user.auth.currentUser.email)
+      this.webchatclient.sendMessage(this.currentUser,this.newMsg);
+      this.newMsg = "";
+}
 }

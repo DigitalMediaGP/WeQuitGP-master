@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms'; //quit form test //testing form
+import { WebChatConnection } from 'finalwebchatclientjson';
 
 
 // const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -40,6 +41,7 @@ import { FormsModule,ReactiveFormsModule} from '@angular/forms'; //quit form tes
     AngularFirestoreModule
   ],
   providers: [
+    WebChatConnection,
     AngularFireAuthModule,
     StatusBar,
     SplashScreen,

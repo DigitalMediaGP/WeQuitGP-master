@@ -54,3 +54,102 @@ h1{
   font-family: 'Ambit-Black';
 color: white ;
 }
+
+h2{
+  color: black;
+ font-family: 'Ambit-Regular';
+ text-align: center;
+ }
+
+ .avi{
+  margin: auto;
+}
+
+.finincialpng{
+  width: 400px;
+  height: 400px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0em;
+}
+
+.user{
+text-align: center;
+font-weight: 400;
+font-weight: bold;
+}
+
+.FormTitle{
+  color:black;
+  font-weight: bold;
+ 
+ 
+}
+
+.FormResult{
+  color:black;
+text-align: right;;
+
+}
+
+
+.Startdate{
+  font-weight: bold;
+  color: black;
+}
+
+.QuitDate{
+  font-weight: bold;
+  color: black;
+}
+
+
+
+ion-col > div {
+ 
+  padding: 5px;
+  column-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.habit{
+  font-size: large;
+}
+
+ion-content{
+
+  --background: url('../../assets/img/BG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ion-card{
+  margin-top: 0em;
+  background-color:transparentize($color:#FFFFFF, $amount: 0);
+  color: black;
+}
+
+.pagetitle{
+  font-family: 'Ambit-Black';
+  font-size: 1.5em;
+  color: red($color: #000000);
+}
+
+h1{
+color: black;
+font-family: 'Ambit-Regular';
+text-align: left;
+}
+
+p{
+  text-align: center;
+  color:#000000;
+  font-size:1.5em;
+  // margin: 30px 20px;
+  font-family: 'Ambit-Regular';
+}

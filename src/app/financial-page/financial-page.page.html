@@ -11,12 +11,12 @@
   <!-- <ion-img class="profileicon"src="assets/svgs/profileicon.png" ></ion-img>  -->
   <ion-card>
     <ion-card-header>
-      <ion-img class="profileicon" src="assets/svgs/financial.svg"></ion-img>
+      <ion-img class="quitformsvg" src="assets/svgs/cigfinancial.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
     </ion-card-header>
 
 
     <ion-card-content>
-      <h1 *ngIf="user"> Heres some financial information about your smoking habit. </h1>
+      <h1 *ngIf="user"> Here's some financial information about your smoking habit. </h1>
       <!-- <ion-card>
         <ion-card-content>
           <p class="habit"> Each cigarette you smoke costs €{{CostPerCigarette}} . Your daily expense for smoking is €{{costPerDay}}. Each week smoking is costing you €{{costPerWeek}}</p>
@@ -24,12 +24,12 @@
       </ion-card> -->
       <ion-item></ion-item>
       <ion-item>
-        <ion-label class="Startdate">Start Date</ion-label>
+        <ion-label class="Startdate">Start date</ion-label>
         <ion-datetime [(ngModel)]="YearsSmoking" disabled value></ion-datetime>
       </ion-item>
 
       <ion-item>
-        <ion-label class="QuitDate">Quit Date</ion-label>
+        <ion-label class="QuitDate">Quit date</ion-label>
         <ion-datetime [(ngModel)]="QuitDate" disabled value></ion-datetime>
       </ion-item>
 
@@ -132,7 +132,7 @@
           <ion-grid>
             <ion-row>
               <ion-col class="colwidth">
-                <div class="FormTitle">Cost per Month: </div>
+                <div class="FormTitle">Cost per month: </div>
               </ion-col>
               <ion-col>
                 <div class="FormResult">€{{costPerMonth}}</div>
@@ -145,7 +145,7 @@
           <ion-grid>
             <ion-row>
               <ion-col class="colwidth">
-                <div class="FormTitle">Cost per Year: </div>
+                <div class="FormTitle">Cost per year: </div>
               </ion-col>
               <ion-col>
                 <div class="FormResult">€{{costPerYear}}</div>

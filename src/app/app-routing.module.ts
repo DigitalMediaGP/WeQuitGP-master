@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'dailytracker', loadChildren: './dailytracker/dailytracker.module#DailytrackerPageModule' },
   { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
   { path: 'choosehabit', loadChildren: './choosehabit/choosehabit.module#ChoosehabitPageModule' },
-  { path: 'loginwelcome', loadChildren: './loginwelcome/loginwelcome.module#LoginwelcomePageModule' }
+  { path: 'loginwelcome', loadChildren: './loginwelcome/loginwelcome.module#LoginwelcomePageModule' },
+  { path: 'vr', loadChildren: './vr/vr.module#VRPageModule' }
 
 
 ];

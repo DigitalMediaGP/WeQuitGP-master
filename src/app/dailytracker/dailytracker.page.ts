@@ -83,12 +83,17 @@ export class DailytrackerPage implements OnInit {
     // alert('you saved  €' + this.moneySaved + 'today!');
 
     if(this.moneySpent > oldHabitcost){
-      alert('Today you smoked ' + this.numcigtoday + ' cigarettes' +' which is '+ this.morecigsthanusual + ' more than you usually smoke.'+ 'Today your habit cost you ' + '€'+ this.moneySpent + '. This is ' + '€'+ this.morethanaverage  + ' more than it usually costs you. It\'s okay to have an off day, just keep your head up and try again. Tomorrow is always a new day ' + this.user.email +', don\'t forget to use the meditation feature to help calm yourself down or download the WeQuit VR app from www.wequit.xyz to help distrack yourself when you\'re feeling stressed.')
+      alert('Today you smoked ' + this.numcigtoday + ' cigarettes' +' which is '+ this.morecigsthanusual + ' more than your daily average.'+ 'Today your habit cost you ' + '€'+ this.moneySpent + '. This is ' + '€'+ this.morethanaverage  + ' more than it usually costs you. It\'s okay to have an off day, just keep your head up and try again. Tomorrow is always a new day ' + this.user.email +'. Don\'t forget to use the meditation feature to help calm yourself down or download our WeQuit VR app from www.wequit.xyz to help distract yourself when you\'re feeling stressed.')
 
     } else if(this.numcigtoday == 0){
       
       alert('Congrats on not smoking at all today! You have saved ' + '€'+ oldHabitcost +'.' + ' By the one-day mark you have already decreased your risk of a heart attack. This is because of reduced constriction of veins and arteries as well as increased oxygen levels that go to the heart to boost its functioning.' + ' Keep up the amazing progress ' + this.user.email +'!')
 
+    }else if(this.numcigtoday == 1){
+      
+      alert('Today you smoked ' + this.numcigtoday + ' cigarette.' + 'This is '+ this.lessthanaverage + ' less than your daily average, great progress! You saved yourself ' + '€' +this.moneySaved +'. Keep up the great work ' + this.user.email +'!' +' Don\'t forget to use the meditation feature to help calm yourself down or download our WeQuit VR app from www.wequit.xyz to help distract yourself when you\'re feeling stressed.')
+
+      
     } else if(this.numcigtoday < this.CigarettesADay){
       console.log('Today you smoked ' + this.numcigtoday + ' cigarettes.' + 'This is less than you usually do, congrats!')
       alert('Today you smoked ' + this.numcigtoday + ' cigarettes.' + 'This is '+ this.lessthanaverage + ' less than your daily average, great progress! You saved yourself ' + '€' +this.moneySaved +'. Keep up the great work ' + this.user.email +'!' +' Don\'t forget to use the meditation feature to help calm yourself down or download the WeQuit VR app from www.wequit.xyz to help distrack yourself when you\'re feeling stressed.')

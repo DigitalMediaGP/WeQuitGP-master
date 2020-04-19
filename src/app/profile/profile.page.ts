@@ -15,49 +15,45 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
   constructor(private service: JournalService, public afAuth: AngularFireAuth, private router: Router) {
-    //get a hold of the user in the app
+    //get a hold of the user logged into app 
     afAuth.authState.subscribe(user => {
       this.user = user;
       console.log(this.user)
     });
   }
-  //load in the details for the user.. get a hold of this data
+  //not used in profile page ( taking from quit form)
   private userDetails: Observable<userinfo[]>;
   user: firebase.User = null;
-  //variable to be added as user information to be database
   brand: string = ""
   CigarettesADay: number = 0
   CigarettesPerBox: number = 0
   CostOfBox: number = 0
   YearsSmoking: number = 0
-  QuitDate:number =0
-  //for deciding if user should update or add
-  costPerYear:number
-  CostPerCigarette:number
-  //updateUser:number
+  QuitDate: number = 0
+  costPerYear: number
+  CostPerCigarette: number
+
   ngOnInit() {
-    this.userDetails = this.service.getUsers()
-    //console.log(this.userDetails)
+    this.userDetails = this.service.getUsers() //get users details 
+
   }
   ionViewWillEnter() {
-    //this.updateUser = 0
+
     this.userDetails.forEach(element => {
       console.log(element)
-      for (let index = 0; index < element.length; index++) {
-        //add all of the previously entered 
+      for (let index = 0; index < element.length; index++) { //only display users information who is logged into app 
+
         if (element[index].UserName == this.user.email) {
-          console.log(this.user.email)
           this.brand = element[index].Brand
           this.CigarettesADay = element[index].CigarettesADay
           this.CigarettesPerBox = element[index].CigarettesPerBox
           this.CostOfBox = element[index].CostOfBox
           this.YearsSmoking = element[index].YearsSmoking
           this.QuitDate = element[index].QuitDate
-          this.costPerYear = this.CostOfBox*52
-          this.CostPerCigarette = this.CostOfBox/this.CigarettesPerBox
-          // this.PricePerDay = this.
-          console.log(this.costPerYear)
-          console.log(this.CostPerCigarette)
+          this.costPerYear = this.CostOfBox * 52
+          this.CostPerCigarette = this.CostOfBox / this.CigarettesPerBox
+
+
         }
       }
     })

@@ -2,47 +2,47 @@
 	<ion-toolbar color="primary">
 		<ion-buttons slot="start">
 			<ion-back-button></ion-back-button>
-	   </ion-buttons>
-	  <ion-title class="pagetitle">Register</ion-title>
+		</ion-buttons>
+		<ion-title class="pagetitle">Register</ion-title>
 	</ion-toolbar>
-  </ion-header>
+</ion-header>
 
 
-  <ion-card-header>
-  <ion-img class="logogyp"src="../../assets/svgs/register.svg"></ion-img>
+<ion-card-header>
+	<ion-img class="logogyp" src="../../assets/svgs/register.svg"></ion-img>
 </ion-card-header>
 
 
-  <ion-content>
-	  <ion-card>
+<ion-content>
+	<ion-card>
 		<ion-card-content>
-			
+
 			<ion-card-title class="cardtitle">Register to WeQuit</ion-card-title>
 
-	
+
 			<ion-list>
-  
+
 				<ion-item>
-				  <ion-label class="ionlabel" position="floating">Username</ion-label>
-				  <ion-input type="text" [(ngModel)]="username"></ion-input>
+					<ion-label class="ionlabel" position="floating">Username</ion-label>
+					<ion-input type="text" [(ngModel)]="username"></ion-input>
 				</ion-item>
-			  
+
 				<ion-item>
-				  <ion-label class="ionlabel" position="floating">Password</ion-label>
-				  <ion-input type="password" [(ngModel)]="password"></ion-input>
+					<ion-label class="ionlabel" position="floating">Password</ion-label>
+					<ion-input type="password" [(ngModel)]="password"></ion-input>
 				</ion-item>
-	  
+
 				<ion-item>
-				  <ion-label  class="ionlabel" position="floating">Confirm Password</ion-label>
-				  <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+					<ion-label class="ionlabel" position="floating">Confirm Password</ion-label>
+					<ion-input type="password" [(ngModel)]="cpassword"></ion-input>
 				</ion-item>
-			  
-			  </ion-list>
-	  
-			  <br>
-			  <ion-button  class="ion-no-margin" fill="solid" expand="block" color="primary" (click)="register()" >SIGNUP</ion-button>
-			  <!-- <ion-button expand="block" type="submit"  class="ion-no-margin"  (click)="login()()">LOGIN</ion-button> -->
-		 
+
+			</ion-list>
+
+			<br>
+			<ion-button class="ion-no-margin" fill="solid" expand="block" color="primary" (click)="register()">SIGNUP
+			</ion-button>
+
 		</ion-card-content>
-	  </ion-card>
-  </ion-content>
+	</ion-card>
+</ion-content>

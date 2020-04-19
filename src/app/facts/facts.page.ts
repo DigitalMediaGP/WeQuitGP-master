@@ -10,33 +10,36 @@ export class FactsPage implements OnInit {
 
   constructor(private iab: InAppBrowser) {
 
-   }
+    //functions to open source links in in app browser
 
-   openF1() {
-     this.iab.create("https://www2.hse.ie/wellbeing/quit-smoking/reasons-to-quit-smoking/smoking-facts-and-figures.html", "_blank");
-   }
+  }
 
-   openF2(){
-     this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/kf/", "_blank");
-   }
+  openF1() {
+    this.iab.create("https://www2.hse.ie/wellbeing/quit-smoking/reasons-to-quit-smoking/smoking-facts-and-figures.html", "_blank");
+  }
 
-   openF3(){
-     this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/smoking-and-mental-health/", "_blank");
-   }
+  openF2() {
+    this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/kf/", "_blank");
+  }
 
-   openF4() {
-     this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/smoking-and-pregnancy/", "_blank");
-   }
+  openF3() {
+    this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/smoking-and-mental-health/", "_blank");
+  }
 
-   openF5() {
-     this.iab.create("https://www.who.int/news-room/fact-sheets/detail/tobacco/", "_blank");
-   }
+  openF4() {
+    this.iab.create("https://www.hse.ie/eng/about/who/tobaccocontrol/smoking-and-pregnancy/", "_blank");
+  }
 
-   openF6() {
-     this.iab.create("https://www2.hse.ie/wellbeing/quit-smoking/reasons-to-quit-smoking/health-benefits-of-stopping-smoking.html", "_blank");
-   }
+  openF5() {
+    this.iab.create("https://www.who.int/news-room/fact-sheets/detail/tobacco/", "_blank");
+  }
+
+  openF6() {
+    this.iab.create("https://www2.hse.ie/wellbeing/quit-smoking/reasons-to-quit-smoking/health-benefits-of-stopping-smoking.html", "_blank");
+  }
 
   ngOnInit() {
   }
 
 }
+

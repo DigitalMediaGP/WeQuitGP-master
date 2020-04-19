@@ -31,11 +31,11 @@ export class MediationPlayerPage implements OnInit {
   ];
 
   activeTrack: Track = null;
-  player: Howl = null ;
+  player: Howl = null;
   isPlaying = false;
   progress = 0;
-  @ViewChild ('range', {static: false}) range: IonRange;
-  // @ViewChild('range') range: IonRange;
+  @ViewChild('range', { static: false }) range: IonRange;
+
 
   constructor() { }
 
@@ -45,62 +45,62 @@ export class MediationPlayerPage implements OnInit {
     }
     this.player = new Howl({
       src: [track.path],
-      // html5: true,
+
       onplay: () => {
         console.log('onplay');
         this.isPlaying = true;
         this.activeTrack = track;
-        this.updateProgress ();
+        this.updateProgress(); // show slider / progress 
       },
       onend: () => {
-        console.log('onend');
+        console.log('onend');  // trouble shooting 
 
       }
     });
-    this.player.play();
+    this.player.play(); //play track 
   }
 
   togglePlayer(pause) {
     this.isPlaying = !pause;
     if (pause) {
-      this.player.pause();
+      this.player.pause(); //pause
     } else {
-      this.player.play();
+      this.player.play(); //play
     }
   }
 
   next() {
     const index = this.playlist.indexOf(this.activeTrack);
-    // tslint:disable-next-line: triple-equals
+
     if (index != this.playlist.length - 1) {
-      this.start(this.playlist[index + 1]);
+      this.start(this.playlist[index + 1]); //next track
     } else {
       this.start(this.playlist[0]);
     }
   }
 
   prev() {
-   const index = this.playlist.indexOf(this.activeTrack);
-   if (index > 0) {
-     this.start(this.playlist[index - 1]);
-   } else {
-     this.start(this.playlist[this.playlist.length - 1]);
-   }
+    const index = this.playlist.indexOf(this.activeTrack);
+    if (index > 0) {
+      this.start(this.playlist[index - 1]); //previous track
+    } else {
+      this.start(this.playlist[this.playlist.length - 1]);
+    }
   }
 
   updateProgress() {
     let seek = this.player.seek();
-    this.progress = ( +seek / this.player.duration()) * 100 || 0;
+    this.progress = (+seek / this.player.duration()) * 100 || 0; // update slider / progress 
     setTimeout(() => {
-        this.updateProgress();
+      this.updateProgress();
     }, 100);
   }
 
-seek() {
-  const newValue = +this.range.value;
-  const duration = this.player.duration();
-  this.player.seek(duration * (newValue / 100));
-}
+  seek() {
+    const newValue = +this.range.value;
+    const duration = this.player.duration();
+    this.player.seek(duration * (newValue / 100)); //duration of track 
+  }
 
   ngOnInit() {
   }

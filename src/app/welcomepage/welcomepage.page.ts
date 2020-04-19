@@ -17,7 +17,6 @@ export class WelcomepagePage implements OnInit {
     //get a hold of the user in the app
     afAuth.authState.subscribe(user => {
       this.user = user;
-      console.log(this.user)
     });
   }
 

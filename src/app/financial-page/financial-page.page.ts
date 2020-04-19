@@ -14,42 +14,38 @@ import { element } from 'protractor';
 })
 export class FinancialPagePage implements OnInit {
   constructor(private service: JournalService, public afAuth: AngularFireAuth, private router: Router) {
-    //get a hold of the user in the app
+    //get a hold of the user logged into app
     afAuth.authState.subscribe(user => {
       this.user = user;
-      //console.log(this.user)
     });
   }
-  //load in the details for the user.. get a hold of this data
+  //load in details for the user.
   private userDetails: Observable<any>;
   user: firebase.User = null;
-  //variable to be added as user information to be database
+
   brand: string = ""
   CigarettesADay: number = 0
   CigarettesPerBox: number = 0
   CostOfBox: number = 0
   YearsSmoking: number = 0
-  QuitDate:number =0
-  //for deciding if user should update or add
+  QuitDate: number = 0
 
-  //variables for calculating fincial information
-  CostPerCigarette:number
-  costPerDay:number 
-  costPerWeek:number
-  costPerMonth:string
-  costPerYear:string
-  //updateUser:number
+
+  //variables for calculating financial information
+  CostPerCigarette: number
+  costPerDay: number
+  costPerWeek: number
+  costPerMonth: string
+  costPerYear: string
+
   ngOnInit() {
   }
   ionViewWillEnter() {
-    //console.log(this.userDetails.forEach(element))
-    //this.updateUser = 0
+
     this.userDetails = this.service.getUsers()
-    console.log(this.userDetails)
     this.userDetails.forEach(element => {
-      console.log(element)
-      for (let index = 0; index < element.length; index++) {
-        //add all of the previously entered 
+      for (let index = 0; index < element.length; index++) { //loop through collection until users details match up with users email logged in. 
+
         if (element[index].UserName == this.user.email) {
           this.brand = element[index].Brand
           this.CigarettesADay = element[index].CigarettesADay
@@ -58,17 +54,12 @@ export class FinancialPagePage implements OnInit {
           this.YearsSmoking = element[index].YearsSmoking
           this.QuitDate = element[index].QuitDate
 
-          //calculations for finanicla information
-          this.CostPerCigarette = parseFloat((this.CostOfBox/this.CigarettesPerBox).toFixed(2))  // cost per cigarette
-          this.costPerDay = parseFloat((this.CigarettesADay*this.CostPerCigarette).toFixed(2))   //cost per day
-          this.costPerWeek = parseFloat((Math.round(this.costPerDay*7 * 100) / 100).toFixed(2)) //cost per week 
-          this.costPerMonth = parseFloat((this.costPerDay*28).toString()).toFixed(2) //cost per month
-          this.costPerYear = parseFloat((this.costPerWeek*28).toString()).toFixed(2) //cost per year
-
-          // this.PricePerDay = this.
-          console.log(this.costPerYear)
-          console.log(this.CostPerCigarette)
-          console.log(this.costPerDay)
+          //calculations for for financial information
+          this.CostPerCigarette = parseFloat((this.CostOfBox / this.CigarettesPerBox).toFixed(2))  // cost per cigarette
+          this.costPerDay = parseFloat((this.CigarettesADay * this.CostPerCigarette).toFixed(2))   //cost per day
+          this.costPerWeek = parseFloat((Math.round(this.costPerDay * 7 * 100) / 100).toFixed(2)) //cost per week 
+          this.costPerMonth = parseFloat((this.costPerDay * 28).toString()).toFixed(2) //cost per month
+          this.costPerYear = parseFloat((this.costPerWeek * 28).toString()).toFixed(2) //cost per year
         }
       }
     })

@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth, public router: Router) {}
-    signOut() {
-      this.afAuth.auth.signOut();
-      this.router.navigate([''])
-    }
-   
+  constructor(public afAuth: AngularFireAuth, public router: Router) { }
+  signOut() {
+    this.afAuth.auth.signOut(); //sign user out of app when user presses sign out button.
+    this.router.navigate([''])
+  }
+
 
   ngOnInit() {
   }

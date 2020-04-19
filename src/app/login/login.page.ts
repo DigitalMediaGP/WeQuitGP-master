@@ -17,10 +17,10 @@ export class LoginPage implements OnInit {
 	async login() {
 		const { username, password } = this
 		try {
-		    await this.afAuth.auth.signInWithEmailAndPassword(username + '@wequit.com', password)
-			this.router.navigate(['/loginwelcome'])
+		    await this.afAuth.auth.signInWithEmailAndPassword(username + '@wequit.com', password) 
+			this.router.navigate(['/loginwelcome']) //once correct username and password is entered - sign in user
 		} catch(err) {
-			alert(err)
+			alert(err) //incorrect password or username
 		}
 	}
 

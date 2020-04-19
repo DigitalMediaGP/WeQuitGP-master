@@ -7,11 +7,12 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
- 
+
   <ion-card>
     <ion-card-header>
-      <ion-img class="quitformsvg" src="assets/svgs/snapvape.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
-     <h1>Please fill in your details below.</h1>
+      <ion-img class="quitformsvg" src="assets/svgs/snapvape.svg" viewBox="0 0 500 500" x="0px" y="0px"
+        xml:space="preserve"></ion-img>
+      <h1>Please fill in your details below.</h1>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -32,17 +33,18 @@
           <ion-input [(ngModel)]="useperday" type="text" placeholder="Per day"> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label class="ionlabel" >Start date</ion-label>
+          <ion-label class="ionlabel">Start date</ion-label>
           <ion-datetime [(ngModel)]="startdate" placeholder="Select Date"></ion-datetime>
         </ion-item>
         <ion-item>
-          <ion-label class="ionlabel" >Quit date</ion-label>
+          <ion-label class="ionlabel">Quit date</ion-label>
           <ion-datetime [(ngModel)]="quitdate" placeholder="Select Date"></ion-datetime>
         </ion-item>
-      </ion-list> 
+      </ion-list>
       <div class="ion-padding">
-        <ion-button expand="block" (click)="addVapeUser()" class="ion-no-margin">Finish</ion-button>  <!-- (click)="addUser()" --> 
-      </div>  
+        <ion-button expand="block" (click)="addVapeUser()" class="ion-no-margin">Finish</ion-button>
+        <!-- (click)="addUser()" -->
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

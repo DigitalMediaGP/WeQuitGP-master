@@ -13,15 +13,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ChoosehabitPage implements OnInit {
 
+  user: firebase.User = null; //firebase user
+
   constructor(private service: JournalService, public afAuth: AngularFireAuth, private router: Router) {
-    //get a hold of the user in the app
+    //gets logged in user from firebase
     afAuth.authState.subscribe(user => {
       this.user = user;
       console.log(this.user)
     });
   }
 
-  user: firebase.User = null; //getting user email from firebase to display on welcome page.
+
 
   ngOnInit() {
   }

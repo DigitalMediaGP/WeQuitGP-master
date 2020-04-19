@@ -18,20 +18,11 @@ export class VapingfinancialPage implements OnInit {
     //get a hold of the user in the app
     afAuth.authState.subscribe(user => {
       this.user = user;
-      //console.log(this.user)
     });
   }
-  //load in the details for the user.. get a hold of this data
+  //load in the details for the user.
   private userDetails: Observable<any>;
   user: firebase.User = null;
-  //variable to be added as user information to be database
-
-  // brand: string = ""
-  // CigarettesADay: number = 0
-  // CigarettesPerBox: number = 0
-  // CostOfBox: number = 0
-  // YearsSmoking: number = 0
-  // QuitDate:number =0
 
 bottlespurchasedweekly:number =0
 flavour:string = ""
@@ -39,25 +30,21 @@ priceofbottle:number = 0
 startdate:number = 0
 quitdate:number = 0
 useperday:number = 0
-  //for deciding if user should update or add
 
-  //variables for calculating fincial information
+
+  //variables for calculating financial information
   costPerDay:number 
   costPerWeek:number
   costPerMonth:number
   costPerYear:string
-  //updateUser:number
+
   ngOnInit() {
   }
   ionViewWillEnter() {
-    //console.log(this.userDetails.forEach(element))
-    //this.updateUser = 0
     this.userDetails = this.service.getVapeUsers()
-    console.log(this.userDetails)
     this.userDetails.forEach(element => {
       console.log(element)
-      for (let index = 0; index < element.length; index++) {
-        //add all of the previously entered 
+      for (let index = 0; index < element.length; index++) { //loop through collection until users details match up with users email logged in. 
         if (element[index].UserName == this.user.email) {
           this.flavour = element[index].flavour
           this.priceofbottle = element[index].priceofbottle
@@ -66,17 +53,13 @@ useperday:number = 0
           this.quitdate = element[index].quitdate
           this.useperday = element[index].useperday
 
-          //calculations for finanicla information
+          //calculations for financial information
 
           this.costPerDay = parseFloat(((this.priceofbottle*this.bottlespurchasedweekly)/7).toFixed(2))   //cost per day
           this.costPerWeek = parseFloat((this.bottlespurchasedweekly*this.priceofbottle).toFixed(2)) //cost per week 
           this.costPerMonth = parseFloat(((this.priceofbottle*this.bottlespurchasedweekly)*4).toFixed(2)) //cost per month
           this.costPerYear = parseFloat((this.costPerWeek*28).toString()).toFixed(2) //cost per year
 
-          // this.PricePerDay = this.
-          console.log(this.costPerYear)
-        
-          console.log(this.costPerDay)
         }
       }
     })

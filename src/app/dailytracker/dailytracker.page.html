@@ -9,41 +9,29 @@
 <ion-content>
 
 
-<ion-card>
-  <ion-card-header>
-    <ion-img class="quitformsvg" src="assets/svgs/tracker.svg" viewBox="0 0 500 500" x="0px" y="0px" xml:space="preserve"></ion-img>
-    <p>You <b>were</b> smoking an average of {{CigarettesADay}} cigarettes a day. Each cigarette you smoked cost €{{CostPerCigarette}}. 
-     Your <b>old</b> habit was costing you €{{costPerDay}} per day.</p>
-    <h2>How many Cigarettes did you smoke today?</h2>
-  </ion-card-header>
-  <ion-card-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-img class="quitformsvg" src="assets/svgs/tracker.svg" viewBox="0 0 500 500" x="0px" y="0px"
+        xml:space="preserve"></ion-img>
+      <p>You <b>were</b> smoking an average of {{CigarettesADay}} cigarettes a day. Each cigarette you smoked cost
+        €{{CostPerCigarette}}.
+        Your <b>old</b> habit was costing you €{{costPerDay}} per day.</p>
+      <h2>How many Cigarettes did you smoke today?</h2>
+    </ion-card-header>
+    <ion-card-content>
 
-    <!-- <ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-col class="colwidth">
-                <div class="FormTitle">Cigarettes per day: </div>
-              </ion-col>
-              <ion-col>
-                <div class="FormResult">{{CigarettesADay}}</div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item> -->
+      <ion-list>
+        <ion-item>
+          <ion-label class="ionlabel" position="floating">Amount</ion-label>
+          <ion-input [(ngModel)]="numcigtoday" (change)='onChange()' type="number"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      <div class="ion-padding">
+        <ion-button expand="block" (click)="onChange()" class="ion-no-margin" id="submitBtn">Submit</ion-button>
+      </div>
 
 
-    <ion-list>
-      <ion-item>
-        <ion-label class="ionlabel" position="floating">Amount</ion-label>
-        <ion-input [(ngModel)]="numcigtoday" (change)='onChange()' type="number"></ion-input>
-      </ion-item>
-     
-    </ion-list>
-    <div class="ion-padding">
-      <ion-button expand="block" (click)="onChange()" class="ion-no-margin" id="submitBtn">Submit</ion-button>
-    </div>
-
-    
-  </ion-card-content>
-</ion-card>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -10,12 +10,12 @@ export class VRPage implements OnInit {
 
   constructor(private iab: InAppBrowser) {
 
-    
 
-   }
 
-   openF1() {
-    this.iab.create("http://wequit.xyz/", "_blank");
+  }
+
+  openF1() {
+    this.iab.create("http://wequit.xyz/", "_blank"); //open in app browser and direct user to wequit website 
   }
 
   ngOnInit() {

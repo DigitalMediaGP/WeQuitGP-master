@@ -26,3 +26,34 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @import "~firebaseui/dist/firebaseui.css";
+
+
+@font-face{
+    font-family: 'Ambit-Black';
+    src: url(assets/fonts/Ambit-Black.otf)
+}
+
+@font-face{
+    font-family: 'Ambit-Regular';
+    src: url(assets/fonts/Ambit-Regular.otf)
+}
+
+@font-face{
+    font-family: 'Ambit-SemiBold';
+    src: url(assets/fonts/Ambit-SemiBold.otf)
+}
+
+@font-face{
+    font-family: 'Ambit-Bold';
+    src: url(assets/fonts/Ambit-Bold.ttf)
+}
+
+@font-face{
+    font-family: 'Ambit-ExtraLight';
+    src: url(assets/fonts/Ambit-ExtraLight.ttf)
+}
+
+@font-face{
+    font-family: 'Ambit-Light';
+    src: url(assets/fonts/Ambit-Light.ttf)
+}
